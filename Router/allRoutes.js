@@ -2,8 +2,8 @@ import Route from "./Route.js";
 
 //Définir ici vos routes
 export const allRoutes = [
-    new Route("/", "Accueil", "/pages/home.html"),
-    new Route("/services", "Nos services", "/pages/services.html"),
+    new Route("/", "Accueil", "/pages/home.php"),
+    new Route("/services", "Nos services", "/pages/services.php"),
     new Route("/habitats", "Nos habitats", "/pages/habitats.html"),
     new Route("/contact", "Contact", "/pages/contact.php", "/public/js/contact.js"),
     new Route("/formAvis", "Formulaire Avis", "/pages/formAvis.php", "/public/js/avis.js"),
