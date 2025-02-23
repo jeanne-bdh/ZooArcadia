@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . "/../templates/header.php" ?>
+
 <!-- SECTION : BIG TITLE -->
 <section class="big_title d-flex align-items-center">
     <h1>NOS SERVICES</h1>
@@ -54,3 +56,5 @@
         <img src="../images/Services/Petit train.jpg" alt="Petit train">
     </article>
 </section>
+
+<?php require_once __DIR__ . "/../templates/footer.php" ?>

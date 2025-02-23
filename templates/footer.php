@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-12 col-lg-4">
-            <h5>Nos horaires</h5>
+            <h5 class="text-primary">Nos horaires</h5>
             <p>
                 Lundi : Fermé <br>
                 Mardi : 10:00 - 19:00 <br>
@@ -14,15 +14,15 @@
             </p>
         </div>
         <div class="col-12 col-lg-4 p-2">
-            <h5>Nous rejoindre</h5>
+            <h5 class="text-primary">Nous rejoindre</h5>
             <p>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-tiktok"></i></a>
+                <a class="fs-2" href="#"><i class="bi bi-facebook"></i></a>
+                <a class="fs-2 mx-3" href="#"><i class="bi bi-instagram"></i></a>
+                <a class="fs-2" href="#"><i class="bi bi-tiktok"></i></a>
             </p>
         </div>
         <div class="col-12 col-lg-4">
-            <h5>Où nous trouver</h5>
+            <h5 class="text-primary">Où nous trouver</h5>
             <p>
                 18 Rue des Chevaliers <br>
                 35400 VILLEPONT <br>
@@ -35,16 +35,15 @@
     <!-- SECTION : MENTIONS LEGALES -->
     <section>
         <hr class="w-75 mx-auto">
-        <p>&copy; 2024 - Zoo Arcadia - Tous droits réservés</p>
+        <p>&copy; 2024 - Zoo Arcadia - Tous droits réservés - Créé par Jeanne BOUCHEND'HOMME</p>
         <a href="#">Mentions légales</a>
-        <a href="#">Gestion des cookies</a>
-        <a href="#">CGU</a>
-        <a href="#">Politique de confidentialité</a>
+        <a class="ms-2" href="#">Gestion des cookies</a>
+        <a class="ms-2" href="#">CGU</a>
+        <a class="ms-2" href="#">Politique de confidentialité</a>
     </section>
 
 </footer>
 
-<script type="module" src="/Router/Router.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

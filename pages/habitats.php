@@ -1,0 +1,24 @@
+<?php require_once __DIR__ . "/../templates/header.php" ?>
+
+<!-- SECTION : BIG TITLE -->
+<section class="big_title d-flex align-items-center">
+    <h1>NOS HABITATS</h1>
+</section>
+
+<!-- SECTION : CONTAINER NOS HABITATS -->
+<section class="container_habitats container d-flex flex-column">
+    <article>
+        <h3>SAVANE</h3>
+        <a href="/savane"><img src="../images/Savane/Savane.jpg" alt="Habitat Savane"></a>
+    </article>
+    <article class="text-end p-5">
+        <h3>JUNGLE</h3>
+        <a href="/jungle"><img src="../images/Jungle/Jungle.jpg" alt="Habitat Jungle"></a>
+    </article>
+    <article>
+        <h3>MARAIS</h3>
+        <a href="/marais"><img src="../images/Marais/Marais.jpg" alt="Habitat Marais"></a>
+    </article>
+</section>
+
+<?php require_once __DIR__ . "/../templates/footer.php" ?>
