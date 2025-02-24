@@ -16,60 +16,55 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : PRESENTATION DU ZOO -->
-    <section class="container my-5 d-flex justify-content-center">
-        <div class="d-flex flex-column align-items-end me-5">
-            <p class="mb-5 pe-4">
-                Venez rencontrer une incroyable <br>
-                diversité d'animaux venant des <br>
-                quatre coins du monde.
+    <section class="container px-3 py-lg-5 my-5 d-flex flex-row">
+        <div class="d-flex flex-column justify-content-center align-items-center me-2">
+            <p class="mx-lg-5 px-lg-5">
+                Venez rencontrer une incroyable diversité d'animaux venant des 4 coins du monde.
             </p>
             <img class="w-50 rounded-circle" src="/assets/images/home/presentation-loutre.jpg"
                 alt="Présentation Loutre">
         </div>
-        <div class="d-flex flex-column align-items-start ms-5">
+        <div class="d-flex flex-column justify-content-center align-items-center ms-2">
             <img class="w-50 rounded-circle" src="/assets/images/home/presentation-singe.jpg"
                 alt="Présentation Singe">
-            <p class="mt-5">
-                Nos équipes veillent quotidiennement au <br>
-                bien-être de chaque animal, garantissant <br>
-                des conditions de vie respectueuses de <br>
-                leurs besoins naturels.
+            <p class="mx-lg-5 px-lg-5 mt-3">
+                Nos équipes veillent quotidiennement au bien-être de chaque animal, garantissant des conditions de vie respectueuses de leurs besoins naturels.
             </p>
         </div>
     </section>
 
     <!-- SECTION : NOS HABITATS -->
-    <section id="home_section_habitats" class="container_bg_secondary1 py-5 bg-secondary">
+    <section class="bg-secondary">
         <div class="container">
-            <div class="d-flex justify-content-center">
+            <div class="py-3 d-flex justify-content-center">
                 <hr class="line-h2">
                 <h2 class="text-black mx-2 mx-md-4">Nos habitats</h2>
                 <hr class="line-h2">
             </div>
             <div class="d-flex flex-column align-items-center">
                 <a href="/pages/savane.php"><img class="w-25" src="/assets/images/home/habitats/savane-home.jpg" alt="Habitats Savane"></a>
-                <h3 class="text-black">Savane</h3>
+                <h4 class="text-black">Savane</h4>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <a href="/pages/jungle.php"><img class="w-25" src="/assets/images/home/habitats/jungle-home.jpg" alt="Habitats Jungle"></a>
-                <h3 class="text-black">Jungle</h3>
+                <h4 class="text-black">Jungle</h4>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <a href="/pages/marais.php"><img class="w-25" src="/assets/images/home/habitats/marais-home.jpg" alt="Habitats Marais"></a>
-                <h3 class="text-black">Marais</h3>
+                <h4 class="text-black">Marais</h4>
             </div>
         </div>
     </section>
 
     <!-- SECTION : NOS SERVICES -->
-    <section class="container_bg_secondary1 py-5 bg-secondary" id="style_section_services">
+    <section class="container-services bg-secondary">
         <div class="container">
-            <div class="d-flex justify-content-center">
+            <div class="py-3 d-flex justify-content-center">
                 <hr class="line-h2">
                 <h2 class="text-black mx-2 mx-md-4">Nos services</h2>
                 <hr class="line-h2">
             </div>
-            <div class="row mt-4">
+            <div class="row">
                 <div class="col-4 text-center text-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
                         <g>
@@ -121,7 +116,7 @@ require_once __DIR__ . "/templates/header.php";
                         <path
                             d="M84.8,337.67a7.65,7.65,0,0,1-6.62-11.48l11.55-20A7.66,7.66,0,1,1,103,313.8l-11.56,20A7.65,7.65,0,0,1,84.8,337.67Z" />
                     </svg>
-                    <p>Visite guidée des habitats <br>(gratuit)</p>
+                    <p>Visite guidée des habitats <br> (gratuit)</p>
                 </div>
                 <div class="col-4 text-center text-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">
@@ -145,9 +140,9 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : NOS ANIMAUX -->
-    <section class="container_bg_secondary1 pb-5 bg-secondary">
+    <section class="pb-5 bg-secondary">
         <div class="container">
-            <div class="py-5 d-flex justify-content-center">
+            <div class="py-3 d-flex justify-content-center">
                 <hr class="line-h2">
                 <h2 class="text-black mx-2 mx-md-4">Nos animaux</h2>
                 <hr class="line-h2">
@@ -177,7 +172,7 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : AVIS -->
-    <section class="bg_avis text-center py-4 bg-info">
+    <section class="bg_avis text-center py-3 bg-info">
         <div class="container">
             <h2 class="text-black mx-2 mx-md-4">Avis de nos visiteurs</h2>
             <div class="row mt-4">

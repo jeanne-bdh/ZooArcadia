@@ -8053,12 +8053,12 @@ textarea.form-control-lg {
   padding-bottom: 1rem !important;
 }
 
-.py-4 {
+.py-3 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
 
-.py-5 {
+.py-3 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
@@ -11859,7 +11859,21 @@ body {
 .line-h2 {
   color: #462f14;
   width: 20%;
-  opacity: 75%;
+  opacity: 1;
+}
+
+p {
+  font-size: 0.9rem;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 .navbar-brand {
@@ -11900,16 +11914,12 @@ body {
 .hero * {
   position: relative;
 }
-.hero p {
-  font-size: 0.9rem;
+
+.container-services svg {
+  width: 30%;
+  fill: #1B4B28;
 }
-@media (min-width: 768px) {
-  .hero p {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 1200px) {
-  .hero p {
-    font-size: 1.2rem;
-  }
+
+.carousel-inner {
+  height: 33vh;
 }/*# sourceMappingURL=main.css.map */
