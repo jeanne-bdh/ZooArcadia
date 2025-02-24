@@ -27,7 +27,7 @@
                 18 Rue des Chevaliers <br>
                 35400 VILLEPONT <br>
                 +33 (0)2 43 48 19 19 <br>
-                contact@arcadia.com
+                contact@zoo-arcadia.com
             </p>
         </div>
     </div>
