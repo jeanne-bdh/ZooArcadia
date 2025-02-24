@@ -1,7 +1,7 @@
 <footer class="bg-dark text-white text-center p-4 w-100">
 
     <div class="row">
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-4">
             <h5 class="text-primary">Nos horaires</h5>
             <p>
                 Lundi : Fermé <br>
@@ -13,15 +13,15 @@
                 Dimanche : 09:00 - 20:00
             </p>
         </div>
-        <div class="col-12 col-lg-4 p-2">
+        <div class="col-12 col-md-4 p-2">
             <h5 class="text-primary">Nous rejoindre</h5>
             <p>
-                <a class="fs-2" href="#"><i class="bi bi-facebook"></i></a>
-                <a class="fs-2 mx-3" href="#"><i class="bi bi-instagram"></i></a>
-                <a class="fs-2" href="#"><i class="bi bi-tiktok"></i></a>
+                <a class="fs-2 text-white" href="#"><i class="bi bi-facebook"></i></a>
+                <a class="fs-2 text-white mx-3" href="#"><i class="bi bi-instagram"></i></a>
+                <a class="fs-2 text-white" href="#"><i class="bi bi-tiktok"></i></a>
             </p>
         </div>
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-md-4">
             <h5 class="text-primary">Où nous trouver</h5>
             <p>
                 18 Rue des Chevaliers <br>
