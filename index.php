@@ -6,7 +6,7 @@ require_once __DIR__ . "/templates/header.php";
 
 <main>
     <!-- SECTION : BIG TITLE -->
-    <section class="big_title d-flex align-items-center">
+    <section class="big-title d-flex align-items-center">
         <p class="text-white text-center fs-5 mx-auto">
             Bienvenue au Zoo Arcadia ! <br>
             Niché au cœur de la forêt de Brocéliande depuis 1960, notre zoo vous invite à une <br>
@@ -39,7 +39,7 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : NOS HABITATS -->
-    <section id="home_section_habitats" class="container_bg_secondary1 py-5">
+    <section id="home_section_habitats" class="container_bg_secondary1 py-5 bg-secondary">
         <div class="container">
             <div class="d-flex justify-content-center">
                 <hr class="line_h2">
@@ -62,7 +62,7 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : NOS SERVICES -->
-    <section class="container_bg_secondary1 py-5" id="style_section_services">
+    <section class="container_bg_secondary1 py-5 bg-secondary" id="style_section_services">
         <div class="container">
             <div class="d-flex justify-content-center">
                 <hr class="line_h2">
@@ -145,7 +145,7 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : NOS ANIMAUX -->
-    <section class="container_bg_secondary1 pb-5">
+    <section class="container_bg_secondary1 pb-5 bg-secondary">
         <div class="container">
             <div class="py-5 d-flex justify-content-center">
                 <hr class="line_h2">
@@ -177,7 +177,7 @@ require_once __DIR__ . "/templates/header.php";
     </section>
 
     <!-- SECTION : AVIS -->
-    <section class="bg_avis text-center py-4">
+    <section class="bg_avis text-center py-4 bg-info">
         <div class="container">
             <h2 class="text-black">Avis de nos visiteurs</h2>
             <div class="row mt-4">
