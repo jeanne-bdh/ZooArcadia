@@ -5,9 +5,9 @@ require_once __DIR__ . "/templates/header.php";
 ?>
 
 <main>
-    <!-- SECTION : BIG TITLE -->
-    <section class="big-title d-flex align-items-center">
-        <p class="text-white text-center fs-5 mx-auto">
+    <!-- SECTION : HERO -->
+    <section class="hero d-flex align-items-center">
+        <p class="text-white text-center mx-auto px-3">
             Bienvenue au Zoo Arcadia ! <br>
             Niché au cœur de la forêt de Brocéliande depuis 1960, notre zoo vous invite à une <br>
             aventure exceptionnelle au milieu de la nature. <br>
@@ -23,11 +23,11 @@ require_once __DIR__ . "/templates/header.php";
                 diversité d'animaux venant des <br>
                 quatre coins du monde.
             </p>
-            <img class="w-50 rounded-circle" src="/assets/images/accueil/Presentation loutre.jpg"
+            <img class="w-50 rounded-circle" src="/assets/images/home/presentation-loutre.jpg"
                 alt="Présentation Loutre">
         </div>
         <div class="d-flex flex-column align-items-start ms-5">
-            <img class="w-50 rounded-circle" src="/assets/images/accueil/Presentation singe.jpg"
+            <img class="w-50 rounded-circle" src="/assets/images/home/presentation-singe.jpg"
                 alt="Présentation Singe">
             <p class="mt-5">
                 Nos équipes veillent quotidiennement au <br>
@@ -42,20 +42,20 @@ require_once __DIR__ . "/templates/header.php";
     <section id="home_section_habitats" class="container_bg_secondary1 py-5 bg-secondary">
         <div class="container">
             <div class="d-flex justify-content-center">
-                <hr class="line_h2">
-                <h2 class="text-black">Nos habitats</h2>
-                <hr class="line_h2">
+                <hr class="line-h2">
+                <h2 class="text-black mx-2 mx-md-4">Nos habitats</h2>
+                <hr class="line-h2">
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a href="/pages/savane.php"><img class="w-25" src="/assets/images/savane/savane.jpg" alt="Habitats Savane"></a>
+                <a href="/pages/savane.php"><img class="w-25" src="/assets/images/home/habitats/savane-home.jpg" alt="Habitats Savane"></a>
                 <h3 class="text-black">Savane</h3>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a href="/pages/jungle.php"><img class="w-25" src="/assets/images/jungle/jungle.jpg" alt="Habitats Jungle"></a>
+                <a href="/pages/jungle.php"><img class="w-25" src="/assets/images/home/habitats/jungle-home.jpg" alt="Habitats Jungle"></a>
                 <h3 class="text-black">Jungle</h3>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a href="/pages/marais.php"><img class="w-25" src="/assets/images/marais/marais.jpg" alt="Habitats Marais"></a>
+                <a href="/pages/marais.php"><img class="w-25" src="/assets/images/home/habitats/marais-home.jpg" alt="Habitats Marais"></a>
                 <h3 class="text-black">Marais</h3>
             </div>
         </div>
@@ -65,9 +65,9 @@ require_once __DIR__ . "/templates/header.php";
     <section class="container_bg_secondary1 py-5 bg-secondary" id="style_section_services">
         <div class="container">
             <div class="d-flex justify-content-center">
-                <hr class="line_h2">
-                <h2 class="text-black">Nos services</h2>
-                <hr class="line_h2">
+                <hr class="line-h2">
+                <h2 class="text-black mx-2 mx-md-4">Nos services</h2>
+                <hr class="line-h2">
             </div>
             <div class="row mt-4">
                 <div class="col-4 text-center text-dark">
@@ -148,20 +148,20 @@ require_once __DIR__ . "/templates/header.php";
     <section class="container_bg_secondary1 pb-5 bg-secondary">
         <div class="container">
             <div class="py-5 d-flex justify-content-center">
-                <hr class="line_h2">
-                <h2 class="text-black">Nos animaux</h2>
-                <hr class="line_h2">
+                <hr class="line-h2">
+                <h2 class="text-black mx-2 mx-md-4">Nos animaux</h2>
+                <hr class="line-h2">
             </div>
             <div id="carouselHome" class="carousel slide">
                 <div class="carousel-inner rounded-5">
                     <div class="carousel-item active">
-                        <img src="/assets/images/carousel/panda_roux.jpg" alt="Panda roux">
+                        <img src="/assets/images/home/carousel/panda-roux.jpg" alt="Panda roux">
                     </div>
                     <div class="carousel-item">
-                        <img src="/assets/images/carousel/presentation_loutre.jpg" alt="Loutre">
+                        <img src="/assets/images/home/carousel/loutre.jpg" alt="Loutre">
                     </div>
                     <div class="carousel-item">
-                        <img src="/assets/images/carousel/presentation_singe.jpg" alt="Singe">
+                        <img src="/assets/images/home/carousel/singe.jpg" alt="Singe">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
@@ -179,7 +179,7 @@ require_once __DIR__ . "/templates/header.php";
     <!-- SECTION : AVIS -->
     <section class="bg_avis text-center py-4 bg-info">
         <div class="container">
-            <h2 class="text-black">Avis de nos visiteurs</h2>
+            <h2 class="text-black mx-2 mx-md-4">Avis de nos visiteurs</h2>
             <div class="row mt-4">
                 <div class="col-3">
                     <span>Gérard D.</span>
@@ -199,7 +199,7 @@ require_once __DIR__ . "/templates/header.php";
                         organisée. Je recommande.”</p>
                 </div>
                 <div class="col-3 d-flex flex-column justify-content-evenly">
-                    <a href="/formAvis">
+                    <a href="/pages/form-avis.php">
                         <svg version="1.1" viewBox="0 0 1640.2342 1754.6284" xmlns="http://www.w3.org/2000/svg">
                             <g transform="translate(1203.2 335.4)">
                                 <path

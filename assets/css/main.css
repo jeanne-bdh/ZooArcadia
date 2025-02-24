@@ -11856,6 +11856,12 @@ body {
   font-family: "Hind Madurai", sans-serif;
 }
 
+.line-h2 {
+  color: #462f14;
+  width: 20%;
+  opacity: 75%;
+}
+
 .navbar-brand {
   font-family: "Sigmar One", sans-serif;
 }
@@ -11875,6 +11881,35 @@ body {
   }
 }
 
-.big-title {
-  background-image: url(/assets/images/accueil/Presentation.jpg);
+.hero {
+  position: relative;
+  height: 33vh;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  background-image: url(/assets/images/hero/presentation.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  filter: brightness(0.6);
+}
+.hero * {
+  position: relative;
+}
+.hero p {
+  font-size: 0.9rem;
+}
+@media (min-width: 768px) {
+  .hero p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero p {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=main.css.map */
