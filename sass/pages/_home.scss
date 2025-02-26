@@ -43,17 +43,13 @@
 .container-habitats {
     a {
         text-align: center;
+    }
 
-        img {
-            border-radius: 10px;
+    img {
+        border-radius: 10px;
 
-            &:hover {
-                filter: brightness(0.6);
-            }
-
-            @media (min-width: 768px) {
-                border-radius: 20px;
-            }
+        @media (min-width: 768px) {
+            border-radius: 20px;
         }
     }
 

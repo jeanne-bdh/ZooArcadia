@@ -1,8 +1,14 @@
-.text-logo {
-    font-family: $font-family-headline;
-    
-    &:hover {
-        font-size: 2rem;
+.name-zoo {
+
+    a {
+        font-family: $font-family-headline;
+        text-decoration: none;
+        font-size: 1.4rem;
+
+        &:hover {
+            color: $primary;
+            font-size: 1.5rem;
+        }
     }
 }
 

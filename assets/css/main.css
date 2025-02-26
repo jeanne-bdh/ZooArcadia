@@ -11889,11 +11889,14 @@ p {
   background-color: #FFF7DA;
 }
 
-.text-logo {
+.name-zoo a {
   font-family: "Sigmar One", sans-serif;
+  text-decoration: none;
+  font-size: 1.4rem;
 }
-.text-logo:hover {
-  font-size: 2rem;
+.name-zoo a:hover {
+  color: #FFF7DA;
+  font-size: 1.5rem;
 }
 
 .navbar-toggler svg {
@@ -11983,14 +11986,11 @@ p {
 .container-habitats a {
   text-align: center;
 }
-.container-habitats a img {
+.container-habitats img {
   border-radius: 10px;
 }
-.container-habitats a img:hover {
-  filter: brightness(0.6);
-}
 @media (min-width: 768px) {
-  .container-habitats a img {
+  .container-habitats img {
     border-radius: 20px;
   }
 }
