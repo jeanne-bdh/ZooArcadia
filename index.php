@@ -150,13 +150,31 @@ require_once __DIR__ . "/templates/header.php";
             <div id="carouselHome" class="carousel slide">
                 <div class="carousel-inner rounded-5">
                     <div class="carousel-item active">
-                        <img src="/assets/images/home/carousel/panda-roux.jpg" alt="Panda roux">
+                        <img src="/assets/images/home/carousel/capybara.jpg" alt="Capybara">
                     </div>
                     <div class="carousel-item">
-                        <img src="/assets/images/home/carousel/loutre.jpg" alt="Loutre">
+                        <img src="/assets/images/home/carousel/crocodile.jpg" alt="Crocodile">
                     </div>
                     <div class="carousel-item">
-                        <img src="/assets/images/home/carousel/singe.jpg" alt="Singe">
+                        <img src="/assets/images/home/carousel/iguane.jpg" alt="Iguane">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/home/carousel/lion.jpg" alt="Lion">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/home/carousel/rhinoceros.jpg" alt="Rhinocéros">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/home/carousel/serpent.jpg" alt="Serpent">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/home/carousel/tigre.jpg" alt="Tigre">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/home/carousel/tortue.jpg" alt="Tortue">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/images/home/carousel/zebre.jpg" alt="Zèbre">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">

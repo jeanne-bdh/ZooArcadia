@@ -7,6 +7,12 @@
 
 .carousel-inner {
     height: 33vh;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .container-habitats {
