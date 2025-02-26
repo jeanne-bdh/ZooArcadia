@@ -1,0 +1,9 @@
+.btn-black {
+    color: $white;
+    background-color: $black;
+
+    &:hover {
+        color: $black;
+        background-color: $primary;
+    }
+}

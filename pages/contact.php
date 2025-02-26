@@ -25,7 +25,7 @@
             </div>
             <div class="mb-3">
                 <label for="FormControlMessageContact" class="form-label">Message :</label>
-                <textarea class="form-control" name="message" id="FormControlMessageContact" rows="3" placeholder="..."></textarea>
+                <textarea class="form-control" name="message" id="FormControlMessageContact" rows="py-3" placeholder="..."></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>

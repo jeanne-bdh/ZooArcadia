@@ -48,7 +48,7 @@
 
             <div class="mb-3">
                 <label for="FormControlMessageAvis" class="form-label">Votre avis :</label>
-                <textarea class="form-control" name="textavis" id="FormControlMessageAvis" rows="3"
+                <textarea class="form-control" name="textavis" id="FormControlMessageAvis" rows="py-3"
                     placeholder="Racontez-nous votre expérience"></textarea>
             </div>
             <div class="text-center">

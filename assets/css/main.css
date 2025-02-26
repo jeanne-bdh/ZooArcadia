@@ -8053,12 +8053,12 @@ textarea.form-control-lg {
   padding-bottom: 1rem !important;
 }
 
-.py-3 {
+.py-4 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
 }
 
-.py-3 {
+.py-5 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
@@ -11876,6 +11876,15 @@ p {
   }
 }
 
+.btn-black {
+  color: #ffffff;
+  background-color: #462f14;
+}
+.btn-black:hover {
+  color: #462f14;
+  background-color: #FFF7DA;
+}
+
 .navbar-brand {
   font-family: "Sigmar One", sans-serif;
 }
@@ -11922,4 +11931,48 @@ p {
 
 .carousel-inner {
   height: 33vh;
+}
+
+.container-habitats a {
+  text-align: center;
+}
+.container-habitats a img {
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  .container-habitats a img {
+    border-radius: 20px;
+  }
+}
+
+span {
+  color: #FFF7DA;
+}
+
+.bi-star-fill {
+  color: #FFD700;
+}
+
+.text-review {
+  color: #ffffff;
+}
+
+.container-link-review svg {
+  width: 50px;
+  fill: #FFF7DA;
+}
+.container-link-review svg:hover {
+  fill: #1B4B28;
+}
+@media (min-width: 768px) {
+  .container-link-review svg {
+    width: 80px;
+  }
+}
+.container-link-review p {
+  color: #1B4B28;
+  text-decoration: underline;
+}
+.container-link-review p:hover {
+  color: #FFF7DA;
 }/*# sourceMappingURL=main.css.map */

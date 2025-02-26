@@ -8,3 +8,54 @@
 .carousel-inner {
     height: 33vh;
 }
+
+.container-habitats {
+    a {
+        text-align: center;
+
+        img {
+            border-radius: 10px;
+
+            @media (min-width: 768px) {
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+span {
+    color: $primary;
+}
+
+.bi-star-fill {
+    color: #FFD700;
+}
+
+.text-review {
+        color: $white;
+}
+
+.container-link-review {
+
+    svg {
+        width: 50px;
+        fill: $primary;
+
+        &:hover {
+            fill: $dark;
+        }
+
+        @media (min-width:768px) {
+            width: 80px;
+        }
+    }
+
+    p {
+        color: $dark;
+        text-decoration: underline;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
