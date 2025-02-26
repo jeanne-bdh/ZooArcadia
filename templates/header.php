@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
                 <a href="/"><img class="logo" src="/assets/images/header/logo-arcadia.svg" alt="Logo Arcadia : un rhinocéros dans un soleil levant"></a>
-                <a class="navbar-brand mx-auto ms-lg-4 fs-4 text-primary" href="/">ZOO ARCADIA</a>
+                <a class="navbar-brand mx-auto ms-lg-4" href="/"><p class="text-logo fs-4 text-primary">ZOO ARCADIA</p></a>
                 <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512">

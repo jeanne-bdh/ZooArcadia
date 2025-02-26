@@ -43,15 +43,15 @@ require_once __DIR__ . "/templates/header.php";
             </div>
             <div class="d-flex flex-column align-items-center">
                 <a href="/pages/savane.php"><img class="w-75" src="/assets/images/home/habitats/savane-home.jpg" alt="Habitats Savane"></a>
-                <h4 class="text-black mt-1 mb-4">Savane</h4>
+                <a href="/pages/savane.php"><h4 class="text-black mt-1 mb-4">Savane</h4></a>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <a href="/pages/jungle.php"><img class="w-75" src="/assets/images/home/habitats/jungle-home.jpg" alt="Habitats Jungle"></a>
-                <h4 class="text-black mt-1 mb-4">Jungle</h4>
+                <a href="/pages/jungle.php"><h4 class="text-black mt-1 mb-4">Jungle</h4></a>
             </div>
             <div class="d-flex flex-column align-items-center">
                 <a href="/pages/marais.php"><img class="w-75 rounded-md-5" src="/assets/images/home/habitats/marais-home.jpg" alt="Habitats Marais"></a>
-                <h4 class="text-black mt-1 mb-4">Marais</h4>
+                <a href="/pages/marais.php"><h4 class="text-black mt-1 mb-4">Marais</h4></a>
             </div>
         </div>
     </section>

@@ -11862,6 +11862,10 @@ body {
   opacity: 1;
 }
 
+a {
+  text-decoration: none;
+}
+
 p {
   font-size: 0.9rem;
 }
@@ -11885,8 +11889,11 @@ p {
   background-color: #FFF7DA;
 }
 
-.navbar-brand {
+.text-logo {
   font-family: "Sigmar One", sans-serif;
+}
+.text-logo:hover {
+  font-size: 2rem;
 }
 
 .navbar-toggler svg {
@@ -11902,6 +11909,10 @@ p {
   .logo {
     width: 100%;
   }
+}
+
+.nav-link:hover {
+  text-decoration: underline;
 }
 
 .hero {
@@ -11924,18 +11935,49 @@ p {
   position: relative;
 }
 
+.legal-infos-link {
+  text-decoration: underline;
+}
+.legal-infos-link:hover {
+  text-decoration: none;
+}
+
 .container-services svg {
   width: 30%;
   fill: #1B4B28;
 }
 
 .carousel-inner {
+  background-color: #76A182;
   height: 33vh;
 }
 .carousel-inner img {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 500px);
   object-fit: cover;
+}
+
+.carousel-item {
+  position: relative;
+}
+.carousel-item p {
+  position: absolute;
+  z-index: 1;
+  top: 75%;
+  left: 45%;
+  color: #ffffff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #ffffff;
+  opacity: 1;
 }
 
 .container-habitats a {
@@ -11944,22 +11986,16 @@ p {
 .container-habitats a img {
   border-radius: 10px;
 }
+.container-habitats a img:hover {
+  filter: brightness(0.6);
+}
 @media (min-width: 768px) {
   .container-habitats a img {
     border-radius: 20px;
   }
 }
-
-span {
-  color: #FFF7DA;
-}
-
-.bi-star-fill {
-  color: #FFD700;
-}
-
-.text-review {
-  color: #ffffff;
+.container-habitats h4:hover, .container-habitats .h4:hover {
+  text-decoration: underline;
 }
 
 .container-link-review svg {
@@ -11980,4 +12016,16 @@ span {
 }
 .container-link-review p:hover {
   color: #FFF7DA;
+}
+
+span {
+  color: #FFF7DA;
+}
+
+.bi-star-fill {
+  color: #FFD700;
+}
+
+.text-review {
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
