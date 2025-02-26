@@ -19,3 +19,13 @@ p {
         font-size: 1.2rem;
     }
 }
+
+h1 {
+    color: $primary;
+    font-family: $font-family-content;
+    font-size: 2rem;
+
+    @media (min-width:768px) {
+        font-size: 3rem;
+    }
+}

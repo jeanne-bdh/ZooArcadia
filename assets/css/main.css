@@ -11880,6 +11880,17 @@ p {
   }
 }
 
+h1, .h1 {
+  color: #FFF7DA;
+  font-family: "Hind Madurai", sans-serif;
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  h1, .h1 {
+    font-size: 3rem;
+  }
+}
+
 .btn-black {
   color: #ffffff;
   background-color: #462f14;

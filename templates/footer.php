@@ -36,10 +36,10 @@
     <section>
         <hr class="w-75 mx-auto">
         <p>&copy; 2024 - Zoo Arcadia - Tous droits réservés - Créé par Jeanne BOUCHEND'HOMME</p>
-        <a class="legal-infos-link" href="#">Mentions légales</a>
-        <a class="legal-infos-link ms-2" href="#">Gestion des cookies</a>
-        <a class="legal-infos-link ms-2" href="#">CGU</a>
-        <a class="legal-infos-link ms-2" href="#">Politique de confidentialité</a>
+        <a class="legal-infos-link" href="/pages/legal-infos/legal_infos.php">Mentions légales</a>
+        <a class="legal-infos-link ms-2" href="/pages/legal-infos/cookie_management.php">Gestion des cookies</a>
+        <a class="legal-infos-link ms-2" href="/pages/legal-infos/cgu.php">CGU</a>
+        <a class="legal-infos-link ms-2" href="/pages/legal-infos/privacy_policy.php">Politique de confidentialité</a>
     </section>
 
 </footer>
