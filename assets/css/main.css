@@ -11738,7 +11738,7 @@ body {
   opacity: 1;
 }
 
-a {
+a:hover {
   text-decoration: none;
 }
 
@@ -11757,7 +11757,7 @@ p {
 }
 
 h1, .h1 {
-  color: #D1EEDB;
+  color: #FFF7DA;
   font-family: "Hind Madurai", sans-serif;
   font-size: 2rem;
 }
@@ -11774,6 +11774,7 @@ h1, .h1 {
 .btn-black:hover {
   color: #462f14;
   background-color: #FFF7DA;
+  border: #FFF7DA;
 }
 
 .name-zoo a {
@@ -11825,20 +11826,12 @@ h1, .h1 {
   position: relative;
 }
 
-.legal-infos-link {
-  text-decoration: underline;
-}
-.legal-infos-link:hover {
-  text-decoration: none;
-}
-
 .container-services svg {
   width: 30%;
   fill: #1b4b28;
 }
 
 .carousel-inner {
-  background-color: #0dcaf0;
   height: 33vh;
 }
 .carousel-inner img {
@@ -11870,9 +11863,6 @@ h1, .h1 {
   opacity: 1;
 }
 
-.container-habitats a {
-  text-align: center;
-}
 .container-habitats img {
   border-radius: 10px;
 }
@@ -11885,34 +11875,30 @@ h1, .h1 {
   text-decoration: underline;
 }
 
-.container-link-review svg {
+.link-form-review svg {
   width: 50px;
-  fill: #D1EEDB;
+  fill: #FFF7DA;
 }
-.container-link-review svg:hover {
+.link-form-review svg:hover {
   fill: #1b4b28;
 }
 @media (min-width: 768px) {
-  .container-link-review svg {
+  .link-form-review svg {
     width: 80px;
   }
 }
-.container-link-review p {
-  color: #1b4b28;
-  text-decoration: underline;
-}
-.container-link-review p:hover {
-  color: #D1EEDB;
-}
 
-span {
-  color: #D1EEDB;
+#link-review {
+  color: #1b4b28;
+}
+#link-review:hover {
+  text-decoration: underline;
+  color: #FFF7DA;
+}
+#link-review p:hover {
+  color: #FFF7DA;
 }
 
 .bi-star-fill {
   color: #FFD700;
-}
-
-.text-review {
-  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
