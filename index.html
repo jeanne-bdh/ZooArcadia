@@ -21,7 +21,7 @@
                     <a href="/"><img class="logo" src="/assets/images/header/logo-arcadia.svg" alt="Logo Arcadia : un rhinocéros dans un soleil levant"></a>
                 </div>
                 <div class="name-zoo">
-                    <a class="navbar-brand mx-auto ms-lg-4 text-primary" href="/">ZOO ARCADIA</a>
+                    <a class="navbar-brand mx-auto ms-lg-4 text-light" href="/">ZOO ARCADIA</a>
                 </div>
                 <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,22 +33,22 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto text-end">
                         <li class="nav-item">
-                            <a class="nav-link text-primary mx-2 fs-5" href="/">Accueil</a>
+                            <a class="nav-link text-light mx-2 fs-5" href="/">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary mx-2 fs-5" href="/services">Nos services</a>
+                            <a class="nav-link text-light mx-2 fs-5" href="/services">Nos services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary mx-2 fs-5" href="/habitats">Nos habitats</a>
+                            <a class="nav-link text-light mx-2 fs-5" href="/habitats">Nos habitats</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-primary mx-2 fs-5" href="/contact">Contact</a>
+                            <a class="nav-link text-light mx-2 fs-5" href="/contact">Contact</a>
                         </li>
                         <li class="nav-item">
                             <?php if (isset($_SESSION['monUser'])) { ?>
-                                <a class="btn btn-primary mx-3 fs-5" href="/logout">Déconnexion</a>
+                                <a class="btn btn-light mx-3 fs-5" href="/logout">Déconnexion</a>
                             <?php } else { ?>
-                                <a class="btn btn-outline-primary mx-3 fs-5" href="/login">Connexion</a>
+                                <a class="btn btn-outline-light mx-3 fs-5" href="/login">Connexion</a>
                             <?php } ?>
                         </li>
                     </ul>
@@ -65,7 +65,7 @@
 
         <div class="row">
             <div class="col-12 col-md-4">
-                <h5 class="text-primary">Nos horaires</h5>
+                <h5 class="text-light">Nos horaires</h5>
                 <p>
                     Lundi : Fermé <br>
                     Mardi : 10:00 - 19:00 <br>
@@ -76,8 +76,8 @@
                     Dimanche : 09:00 - 20:00
                 </p>
             </div>
-            <div class="col-12 col-md-4 p-2">
-                <h5 class="text-primary">Nous rejoindre</h5>
+            <div class="col-12 col-md-4">
+                <h5 class="text-light">Nous rejoindre</h5>
                 <p>
                     <a class="fs-2 text-white" href="#"><i class="bi bi-facebook"></i></a>
                     <a class="fs-2 text-white mx-3" href="#"><i class="bi bi-instagram"></i></a>
@@ -85,7 +85,7 @@
                 </p>
             </div>
             <div class="col-12 col-md-4">
-                <h5 class="text-primary">Où nous trouver</h5>
+                <h5 class="text-light">Où nous trouver</h5>
                 <p>
                     18 Rue des Chevaliers <br>
                     35400 VILLEPONT <br>
@@ -100,9 +100,9 @@
             <hr class="w-75 mx-auto">
             <p>&copy; 2024 - Zoo Arcadia - Tous droits réservés - Créé par Jeanne BOUCHEND'HOMME</p>
             <a class="legal-infos-link" href="/legalInfos">Mentions légales</a>
-            <a class="legal-infos-link ms-2" href="/pages/legal-infos/cookie_management.php">Gestion des cookies</a>
-            <a class="legal-infos-link ms-2" href="/pages/legal-infos/cgu.php">CGU</a>
-            <a class="legal-infos-link ms-2" href="/pages/legal-infos/privacy_policy.php">Politique de confidentialité</a>
+            <a class="legal-infos-link ms-2" href="/cookieManagement">Gestion des cookies</a>
+            <a class="legal-infos-link ms-2" href="/cgu">CGU</a>
+            <a class="legal-infos-link ms-2" href="/privacyPolicy">Politique de confidentialité</a>
         </section>
 
     </footer>
