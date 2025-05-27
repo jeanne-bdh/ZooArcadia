@@ -6,6 +6,11 @@ export const allRoutes = [
     new Route("/services", "Nos services", "/pages/services.html"),
     new Route("/habitats", "Nos habitats", "/pages/habitats.html"),
     new Route("/contact", "Contact", "/pages/contact.html"),
+    new Route("/login", "Connexion", "/pages/auth/login.html"),
+    new Route("/logout", "Déconnexion", "/pages/auth/logout.html"),
+    new Route("/savane", "Savane", "/pages/habitats/savane.html"),
+    new Route("/jungle", "Jungle", "/pages/habitats/jungle.html"),
+    new Route("/marais", "Marais", "/pages/habitats/marais.html"),
     new Route("/avis", "Rédiger un avis", "/pages/form-avis.html"),
     new Route("/legalInfos", "Mentions légales", "/pages/legal-infos/legal_infos.html"),
 ];
