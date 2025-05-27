@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Sigmar+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Scada:ital,wght@0,400;0,700;1,400;1,700&family=Sigmar+One&display=swap");
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
@@ -11757,14 +11757,23 @@ p {
 }
 
 h1, .h1 {
-  color: #FFF7DA;
-  font-family: "Hind Madurai", sans-serif;
+  color: #ffffff;
+  font-family: "Scada", sans-serif;
   font-size: 2rem;
 }
 @media (min-width: 768px) {
   h1, .h1 {
     font-size: 3rem;
   }
+}
+
+h2, .h2 {
+  color: #462f14;
+  font-family: "Scada", sans-serif;
+}
+
+h3, .h3 {
+  color: #462f14;
 }
 
 .btn-black {
@@ -11790,7 +11799,7 @@ h1, .h1 {
 .navbar-toggler svg {
   width: 1.9rem;
   height: 1.9rem;
-  fill: #D1EEDB;
+  fill: #FFF7DA;
 }
 
 .logo {

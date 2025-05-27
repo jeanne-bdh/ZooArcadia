@@ -21,11 +21,20 @@ p {
 }
 
 h1 {
-    color: $light;
-    font-family: $font-family-content;
+    color: $white;
+    font-family: $font-family-headline;
     font-size: 2rem;
 
     @media (min-width:768px) {
         font-size: 3rem;
     }
+}
+
+h2 {
+    color: $black;
+    font-family: $font-family-headline;
+}
+
+h3 {
+    color: $black;
 }
