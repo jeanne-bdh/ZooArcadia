@@ -11796,6 +11796,15 @@ h3, .h3 {
   font-size: 1.5rem;
 }
 
+.navbar-toggler {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
 .navbar-toggler svg {
   width: 1.9rem;
   height: 1.9rem;
@@ -11910,4 +11919,8 @@ h3, .h3 {
 
 .bi-star-fill {
   color: #FFD700;
+}
+
+.section-404 {
+  min-height: 50vh;
 }/*# sourceMappingURL=main.css.map */

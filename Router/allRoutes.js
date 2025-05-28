@@ -14,7 +14,7 @@ export const allRoutes = [
     new Route("/form-review", "Rédiger un avis", "/pages/reviews/form-review.html"),
     new Route("/all-reviews", "Tous les avis", "/pages/reviews/all-reviews.html"),
     new Route("/legalInfos", "Mentions légales", "/pages/legal-infos/legal_infos.html"),
-    new Route("/cookieManagment", "Gestion des cookies", "/pages/legal-infos/cookie_managment.html"),
+    new Route("/cookieManagement", "Gestion des cookies", "/pages/legal-infos/cookie_management.html"),
     new Route("/cgu", "CGU", "/pages/legal-infos/cgu.html"),
     new Route("/privacyPolicy", "Politique de confidentialité", "/pages/legal-infos/privacy_policy.html"),
 ];
