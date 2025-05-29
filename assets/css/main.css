@@ -11786,17 +11786,6 @@ h3, .h3 {
   border: #FFF7DA;
 }
 
-@media (min-width: 768px) {
-  .container-form {
-    max-width: 500px;
-  }
-}
-@media (min-width: 992px) {
-  .container-form {
-    max-width: 600px;
-  }
-}
-
 .name-zoo a {
   font-family: "Sigmar One", sans-serif;
   text-decoration: none;
@@ -11853,6 +11842,12 @@ h3, .h3 {
 }
 .hero * {
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .container-back {
+    max-width: 67%;
+  }
 }
 
 .container-services svg {
@@ -11934,4 +11929,23 @@ h3, .h3 {
 
 .section-404 {
   min-height: 50vh;
+}
+
+.img-services {
+  width: 150px;
+}
+
+@media (min-width: 992px) {
+  .article-services {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .guided-tour {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .img-services {
+    width: 200px;
+  }
 }/*# sourceMappingURL=main.css.map */
