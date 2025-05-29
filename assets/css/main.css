@@ -11786,6 +11786,14 @@ h3, .h3 {
   border: #FFF7DA;
 }
 
+legend {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+}
+
 .name-zoo a {
   font-family: "Sigmar One", sans-serif;
   text-decoration: none;
