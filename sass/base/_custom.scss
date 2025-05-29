@@ -23,11 +23,6 @@ $theme-colors: (
     "white": $white
 );
 
-$container-max-widths: (
-    md: 500px,
-    lg: 600px,
-);
-
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
