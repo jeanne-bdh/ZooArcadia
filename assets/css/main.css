@@ -11956,4 +11956,14 @@ legend {
   .img-services {
     width: 200px;
   }
+}
+.img-animal {
+  width: 85px;
+  height: 85px;
+}
+@media (min-width: 768px) {
+  .img-animal {
+    width: 100px;
+    height: 100px;
+  }
 }/*# sourceMappingURL=main.css.map */

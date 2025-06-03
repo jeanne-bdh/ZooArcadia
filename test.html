@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail Animal</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            margin-bottom: 30px;
+        }
+
+        .animal-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .animal-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background-color: #c8e6c9;
+        }
+
+        .animal-detail {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .animal-detail h2 {
+            color: #1b5e20;
+            margin-bottom: 20px;
+        }
+
+        .animal-detail p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .animal-detail span {
+            font-weight: bold;
+            color: #33691e;
+        }
+
+        .animal-detail img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 10px 0 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #animalDetail {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🐾 Nos Animaux de la Savane</h1>
+
+    <div class="animal-list">
+        <div class="animal-card" data-id="1">🦁 Simba</div>
+        <div class="animal-card" data-id="2">🐆 Kali</div>
+    </div>
+
+    <div class="animal-detail" id="animalDetail">
+        <h2>Détail de l'animal</h2>
+        <p><strong>Prénom :</strong> <span id="name"></span></p>
+        <p><strong>Race :</strong> <span id="race"></span></p>
+        <p><strong>Habitat :</strong> <span id="habitat"></span></p>
+        <p><strong>État :</strong> <span id="etat"></span></p>
+        <p><strong>Avis du vétérinaire :</strong> <span id="avis"></span></p>
+        <div id="images" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        const animalData = {
+            1: {
+                prenom: "Simba",
+                race: "Lion",
+                habitat: "Savane Africaine",
+                etat: "En bonne santé",
+                avis: "Aucun problème détecté.",
+                images: [
+                    "https://via.placeholder.com/150?text=Simba+1",
+                    "https://via.placeholder.com/150?text=Simba+2"
+                ]
+            },
+            2: {
+                prenom: "Kali",
+                race: "Guépard",
+                habitat: "Savane Africaine",
+                etat: "Blessure à la patte",
+                avis: "Repos recommandé pendant 5 jours.",
+                images: [
+                    "https://via.placeholder.com/150?text=Kali"
+                ]
+            }
+        };
+
+        const cards = document.querySelectorAll('.animal-card');
+        const detail = document.getElementById('animalDetail');
+        const nameEl = document.getElementById('name');
+        const raceEl = document.getElementById('race');
+        const habitatEl = document.getElementById('habitat');
+        const etatEl = document.getElementById('etat');
+        const avisEl = document.getElementById('avis');
+        const imagesEl = document.getElementById('images');
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.dataset.id;
+                const animal = animalData[id];
+
+                nameEl.textContent = animal.prenom;
+                raceEl.textContent = animal.race;
+                habitatEl.textContent = animal.habitat;
+                etatEl.textContent = animal.etat;
+                avisEl.textContent = animal.avis;
+
+                imagesEl.innerHTML = '';
+                animal.images.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    imagesEl.appendChild(img);
+                });
+
+                detail.style.display = 'block';
+                detail.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

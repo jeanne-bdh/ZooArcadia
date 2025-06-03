@@ -1,0 +1,9 @@
+.img-animal {
+    width: 85px;
+    height: 85px;
+
+    @media (min-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+}
