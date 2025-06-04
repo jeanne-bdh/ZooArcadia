@@ -18,6 +18,16 @@ export const allRoutes = [
     new Route("/cookieManagement", "Gestion des cookies", "/pages/legal-infos/cookie_management.html"),
     new Route("/cgu", "CGU", "/pages/legal-infos/cgu.html"),
     new Route("/privacyPolicy", "Politique de confidentialité", "/pages/legal-infos/privacy_policy.html"),
+    new Route("/employee", "Employé", "/pages/employee/employee_session.html"),
+    new Route("/veterinary", "Vétérinaire", "/pages/veterinary/veterinary_session.html"),
+    new Route("/admin", "Administrateur", "/pages/admin/admin_session.html"),
+    new Route("/reportVet", "Comptes rendus animaliers", "/pages/admin/report_vet.html"),
+    new Route("/dashboard", "Dashboard", "/pages/admin/dashboard.html"),
+    new Route("/register", "Créer des comptes", "/pages/admin/register.html"),
+    new Route("/crud", "Comptes rendus animaliers", "/pages/admin/crud.html"),
+    new Route("/crudServices", "Modifier les services", "/pages/employee/crud-services.html"),
+    new Route("/foodConso", "Saisir la nourriture", "/pages/employee/food-conso.html"),
+    new Route("/reviewValid", "Valider les avis", "/pages/employee/review-valid.html"),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename

@@ -11972,4 +11972,15 @@ legend {
   font-size: 1.2rem;
   font-weight: 500;
   color: #462f14;
+}
+
+.label-session {
+  color: #76A182;
+}
+.label-session:hover {
+  text-decoration: none;
+}
+
+.link-card-session {
+  color: #76A182;
 }/*# sourceMappingURL=main.css.map */
