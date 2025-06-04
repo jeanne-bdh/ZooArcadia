@@ -26,8 +26,15 @@ export const allRoutes = [
     new Route("/register", "Créer des comptes", "/pages/admin/register.html"),
     new Route("/crud", "Comptes rendus animaliers", "/pages/admin/crud.html"),
     new Route("/crudServices", "Modifier les services", "/pages/employee/crud-services.html"),
-    new Route("/foodConso", "Saisir la nourriture", "/pages/employee/food-conso.html"),
+    new Route("/inputFoodConso", "Saisir la nourriture", "/pages/employee/input-food-conso.html"),
     new Route("/reviewValid", "Valider les avis", "/pages/employee/review-valid.html"),
+    new Route("/consultFoodConso", "Consulter la consommmation des animaux", "/pages/veterinary/consult-food-conso.html"),
+    new Route("/habitatComment", "Commenter les habitats", "/pages/veterinary/habitat-comment.html"),
+    new Route("/inputReport", "Saisir les comptes rendus animaliers", "/pages/veterinary/input-report.html"),
+    
+    new Route("/inputReport", "Saisir les comptes rendus animaliers", "/pages/veterinary/input-report.html"),
+    new Route("/inputReport", "Saisir les comptes rendus animaliers", "/pages/veterinary/input-report.html"),
+    new Route("/inputReport", "Saisir les comptes rendus animaliers", "/pages/veterinary/input-report.html"),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
