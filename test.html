@@ -1,266 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détail Animal</title>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espace Admin - Zoo</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            margin: 0;
-            padding: 0;
+            font-family: sans-serif;
+            margin: 2rem;
+            background-color: #f9f9f9;
         }
 
-        header {
-            background: #00796b;
-            color: white;
-            padding: 1rem;
+        h1 {
             text-align: center;
         }
 
-        .container {
-            padding: 1rem 2rem;
+        form {
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            max-width: 400px;
+            margin: 1rem auto;
         }
 
-        h2 {
-            color: #333;
-            margin-top: 2rem;
-        }
-
-        .habitat-comment {
-            margin-bottom: 1rem;
-        }
-
-        textarea {
+        input,
+        select,
+        button {
+            display: block;
             width: 100%;
-            height: 60px;
-            margin-top: 0.5rem;
+            margin-bottom: 1rem;
             padding: 0.5rem;
-            resize: vertical;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         th,
         td {
-            border: 1px solid #ccc;
-            padding: 0.5rem;
-            text-align: left;
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: center;
         }
 
-        input[type="text"],
-        input[type="number"],
-        input[type="date"] {
-            width: 100%;
-            padding: 0.4rem;
-            box-sizing: border-box;
-        }
-
-        tr:hover {
-            background: #e0f2f1;
+        .actions button {
+            margin: 0 0.25rem;
+            padding: 0.3rem 0.6rem;
             cursor: pointer;
-        }
-
-        .hidden {
-            display: none;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>Espace Vétérinaire</h1>
-    </header>
 
-    <main class="container">
+    <h1>Espace Administrateur - Gestion des Animaux</h1>
 
-        <!-- Habitats avec commentaires -->
-        <section>
-            <h2>Commentaires sur les habitats</h2>
-            <div class="habitat-comment">
-                <label for="savane-comment">Savane :</label>
-                <textarea id="savane-comment" placeholder="État général, suggestions..."></textarea>
-            </div>
-            <div class="habitat-comment">
-                <label for="jungle-comment">Jungle :</label>
-                <textarea id="jungle-comment" placeholder="État général, suggestions..."></textarea>
-            </div>
-        </section>
+    <form id="animal-form">
+        <input type="hidden" id="editIndex" value="">
+        <input type="text" id="name" placeholder="Nom de l'animal" required />
+        <input type="text" id="species" placeholder="Espèce" required />
+        <input type="text" id="habitat" placeholder="Habitat" required />
+        <button type="submit">Ajouter / Mettre à jour</button>
+    </form>
 
-        <!-- Tableau des animaux -->
-        <section>
-            <h2>Suivi des animaux</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Animal</th>
-                        <th>État</th>
-                        <th>Nourriture</th>
-                        <th>Grammage (g)</th>
-                        <th>Date</th>
-                        <th>Détails</th>
-                    </tr>
-                </thead>
-                <tbody id="animal-table">
-                    <tr>
-                        <td data-animal="lion">Lion</td>
-                        <td><input type="text" placeholder="Bon état"></td>
-                        <td><input type="text" placeholder="Viande rouge"></td>
-                        <td><input type="number" placeholder="500"></td>
-                        <td><input type="date"></td>
-                        <td><input type="text" placeholder="Dents en bon état..."></td>
-                    </tr>
-                    <tr>
-                        <td data-animal="zèbre">Zèbre</td>
-                        <td><input type="text" placeholder="Fatigué"></td>
-                        <td><input type="text" placeholder="Herbe fraîche"></td>
-                        <td><input type="number" placeholder="300"></td>
-                        <td><input type="date"></td>
-                        <td><input type="text" placeholder="Boiterie jambe avant..."></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Détail au clic -->
-        <section id="animal-detail" class="hidden">
-            <h2>Détails de l’animal</h2>
-            <p id="animal-name"></p>
-            <p>Dernier avis vétérinaire :</p>
-            <p id="veto-opinion"></p>
-        </section>
-
-    </main>
-
-
-    <script>
-        const opinions = {
-            lion: "Le lion est en excellente forme. Bonne dentition. Surveillance poids.",
-            zèbre: "Léger boitement. Attention à la jambe avant gauche."
-        };
-
-        // Ajouter comportement au clic
-        document.querySelectorAll('[data-animal]').forEach(cell => {
-            cell.addEventListener('click', () => {
-                const animal = cell.dataset.animal;
-                document.getElementById('animal-name').textContent = `Animal : ${animal.charAt(0).toUpperCase() + animal.slice(1)}`;
-                document.getElementById('veto-opinion').textContent = opinions[animal] || "Aucun avis enregistré.";
-                document.getElementById('animal-detail').classList.remove('hidden');
-                window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-            });
-        });
-    </script>
-
-<section class="table-responsive mt-4 mx-lg-5">
-    <table class="table table-striped">
+    <table>
         <thead>
             <tr>
-                <th scope="col">Animal</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">État</th>
-                <th scope="col">Nourriture</th>
-                <th scope="col">Quantité (g)</th>
-                <th scope="col">Date</th>
-                <th scope="col">Détails</th>
-                <th scope="col">Soumettre</th>
+                <th>Nom</th>
+                <th>Espèce</th>
+                <th>Habitat</th>
+                <th>Actions</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <select class="form-select" aria-label="Sélection animal">
-                        <option selected>Animal</option>
-                        <option value="1">Capybara</option>
-                        <option value="2">Gorille</option>
-                        <option value="3">Iguane</option>
-                        <option value="4">Paresseux</option>
-                        <option value="5">Tigre</option>
-                        <option value="6">Toucan</option>
-                        <option value="7">Crocodile</option>
-                        <option value="8">Grenouille</option>
-                        <option value="9">Héron</option>
-                        <option value="10">Loutre</option>
-                        <option value="11">Serpent</option>
-                        <option value="12">Tortue</option>
-                        <option value="13">Babouin</option>
-                        <option value="14">Eléphant</option>
-                        <option value="15">Girafe</option>
-                        <option value="16">Lion</option>
-                        <option value="17">Rhinocéros</option>
-                        <option value="18">Zèbre</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-select" aria-label="Sélection Prénom">
-                        <option selected>Prénom</option>
-                        <option value="1">Alicia</option>
-                        <option value="2">Kitkat</option>
-                        <option value="3">Bigmac</option>
-                        <option value="4">Turbo</option>
-                        <option value="5">Milou</option>
-                        <option value="6">Rio</option>
-                        <option value="7">Gaby</option>
-                        <option value="8">Sacha</option>
-                        <option value="9">Arnold</option>
-                        <option value="10">Eléna</option>
-                        <option value="11">Vortex</option>
-                        <option value="12">Fred</option>
-                        <option value="13">Marcel</option>
-                        <option value="14">Mina</option>
-                        <option value="15">Britney</option>
-                        <option value="16">Claude</option>
-                        <option value="17">Praline</option>
-                        <option value="18">Ray</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-select" aria-label="Sélection état">
-                        <option selected>Etat</option>
-                        <option value="1">Excellent</option>
-                        <option value="2">Très bon</option>
-                        <option value="3">Bon</option>
-                        <option value="4">Correct</option>
-                        <option value="5">Convalescent</option>
-                        <option value="6">Stable</option>
-                        <option value="7">Affaibli</option>
-                        <option value="8">Mauvais</option>
-                        <option value="9">Très mauvais</option>
-                    </select>
-                </td>
-                <td>
-                    <select class="form-select" aria-label="Sélection nourriture">
-                        <option selected>Nourriture</option>
-                        <option value="1">Fruits</option>
-                        <option value="2">Herbes</option>
-                        <option value="3">Insectes</option>
-                        <option value="4">Poissons</option>
-                        <option value="5">Souris</option>
-                        <option value="6">Oiseaux</option>
-                        <option value="7">Crustacés</option>
-                        <option value="8">Feuilles d'acacia</option>
-                        <option value="9">Viande</option>
-                        <option value="10">Ecorces</option>
-                        <option value="11">Plantes aquatiques</option>
-                        <option value="12">Fleurs</option>
-                        <option value="13">Oeufs</option>
-                    </select>
-                </td>
-                <td class="input-qty"><input type="number" class="form-control" placeholder="0"></td>
-                <td><input type="date" class="form-control"></td>
-                <td><textarea class="form-control" placeholder="Dents en bon état..."></textarea></td>
-                <td class="text-center"><button type="button" class="btn text-black"><i class="bi bi-check-square-fill"></i></button></td>
-            </tr>
+        <tbody id="animal-table-body">
+            <!-- Les lignes seront générées dynamiquement -->
         </tbody>
     </table>
-</section>
+
+    <script>
+        const form = document.getElementById('animal-form');
+        const nameInput = document.getElementById('name');
+        const speciesInput = document.getElementById('species');
+        const habitatInput = document.getElementById('habitat');
+        const editIndexInput = document.getElementById('editIndex');
+        const tableBody = document.getElementById('animal-table-body');
+
+        let animals = [];
+
+        function renderTable() {
+            tableBody.innerHTML = '';
+            animals.forEach((animal, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+          <td>${animal.name}</td>
+          <td>${animal.species}</td>
+          <td>${animal.habitat}</td>
+          <td class="actions">
+            <button onclick="editAnimal(${index})">✏️</button>
+            <button onclick="deleteAnimal(${index})">🗑️</button>
+          </td>
+        `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function editAnimal(index) {
+            const animal = animals[index];
+            nameInput.value = animal.name;
+            speciesInput.value = animal.species;
+            habitatInput.value = animal.habitat;
+            editIndexInput.value = index;
+        }
+
+        function deleteAnimal(index) {
+            if (confirm("Supprimer cet animal ?")) {
+                animals.splice(index, 1);
+                renderTable();
+            }
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = nameInput.value.trim();
+            const species = speciesInput.value.trim();
+            const habitat = habitatInput.value.trim();
+            const editIndex = editIndexInput.value;
+
+            if (editIndex === '') {
+                animals.push({ name, species, habitat });
+            } else {
+                animals[editIndex] = { name, species, habitat };
+                editIndexInput.value = '';
+            }
+
+            form.reset();
+            renderTable();
+        });
+
+        // Initial data (optional)
+        animals = [
+            { name: "Leo", species: "Lion", habitat: "Savane" },
+            { name: "Kiki", species: "Toucan", habitat: "Jungle tropicale" }
+        ];
+        renderTable();
+    </script>
 
 </body>
 

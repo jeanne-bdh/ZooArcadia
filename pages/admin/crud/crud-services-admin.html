@@ -1,0 +1,76 @@
+<!-- SECTION : HERO -->
+<section class="hero px-3 text-center d-flex justify-content-center align-items-center">
+    <h1>Modifier les services</h1>
+</section>
+
+<!-- SECTION : UPDATE SERVICES -->
+<section class="container">
+    <form class="row m-3 m-md-5">
+        <div class="mb-3">
+            <label for="titleServInput" class="form-label">Titre du service</label>
+            <input type="text" class="form-control" id="titleServInput">
+        </div>
+        <div class="mb-3">
+            <label for="descServInput" class="form-label">Description du service</label>
+            <textarea class="form-control" id="descServInput"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="iconServInput" class="form-label">Icône (page d'accueil)</label>
+            <input type="file" class="form-control" id="iconServInput">
+        </div>
+        <div class="mb-3">
+            <label for="imgServInput" class="form-label">Images (page des services)</label>
+            <input type="file" class="form-control" id="imgServInput">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-black mt-3">Mettre à jour</button>
+        </div>
+    </form>
+</section>
+
+<!-- SECTION : SERVICES LIST -->
+<section class="table-responsive my-5 mx-3 mx-md-5">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Titre</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="text-center">Icônes</th>
+                <th scope="col" class="text-center">Images</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Restauration</td>
+                <td>Profitez d’une pause gourmande dans notre espace de restauration conçu pour toute la famille.<br>
+                    Nos offres comprennent :
+                    <ul>
+                        <li>Restaurants familiaux</li>
+                        <li>Snacks et boissons</li>
+                        <li>Options végétariennes et véganes</li>
+                        <li>Menus pour enfants</li>
+                        <li>Terrasses en plein air</li>
+                    </ul>
+                </td>
+                <td class="text-center"><img src="/assets/images/home/services/icon-restaurant.svg" alt=""></td>
+                <td class="text-center"><img class="w-50" src="/assets/images/services/restauration.jpg" alt=""></td>
+            </tr>
+            <tr>
+                <td>Visite guidée des habitats (gratuit)</td>
+                <td>Plongez au cœur de la nature ! <br>
+                    Conçues pour enrichir votre expérience, nos visites guidées vous offrent une perspective unique et
+                    informative sur les animaux et leur habitat.</td>
+                <td class="text-center"><img src="/assets/images/home/services/icon-binoculars.svg" alt=""></td>
+                <td class="text-center"><img class="w-50" src="/assets/images/services/visite-guidee.jpg" alt=""></td>
+            </tr>
+            <tr>
+                <td>Visite du zoo en petit train</td>
+                <td>Transformez votre visite en une aventure relaxante et amusante ! <br>
+                    Idéal pour les familles, les groupes d’amis, et ceux qui souhaitent découvrir le zoo sans effort.
+                </td>
+                <td class="text-center"><img src="/assets/images/home/services/icon-train.svg" alt=""></td>
+                <td class="text-center"><img class="w-50" src="/assets/images/services/petit-train.jpg" alt=""></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
