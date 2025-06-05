@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+    .h3-left {
+        padding-left: 7rem;
+    }
+
+    .h3-right {
+        padding-right: 7rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .h3-left {
+        padding-left: 11rem;
+    }
+
+    .h3-right {
+        padding-right: 11rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .h3-left {
+        padding-left: 13.5rem;
+    }
+
+    .h3-right {
+        padding-right: 13.5rem;
+    }
+}

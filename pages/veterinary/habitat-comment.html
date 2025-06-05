@@ -1,10 +1,24 @@
 <!-- SECTION : HERO -->
-<section class="hero d-flex justify-content-center align-items-center">
+<section class="hero d-flex text-center justify-content-center align-items-center">
     <h1>Commenter les habitats</h1>
 </section>
 
 
 <!-- SECTION : HABITAT COMMENT -->
-<section>
-
+<section class="container my-5">
+    <div class="d-flex flex-column mb-4 mx-4">
+        <label for="savane-comment">Savane :</label>
+        <textarea id="savane-comment" placeholder="État général, suggestions..."></textarea>
+    </div>
+    <div class="d-flex flex-column mb-4 mx-4">
+        <label for="jungle-comment">Jungle :</label>
+        <textarea id="jungle-comment" placeholder="État général, suggestions..."></textarea>
+    </div>
+    <div class="d-flex flex-column mb-4 mx-4">
+        <label for="marais-comment">Marais :</label>
+        <textarea id="marais-comment" placeholder="État général, suggestions..."></textarea>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-black" id="btn-comment-habitat">Enregistrer</button>
+    </div>
 </section>

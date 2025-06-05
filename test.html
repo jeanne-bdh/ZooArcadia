@@ -8,152 +8,153 @@
 
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
             margin: 0;
-            padding: 30px;
-            background: #e8f5e9;
-            color: #2e7d32;
+            padding: 0;
         }
 
-        h1 {
+        header {
+            background: #00796b;
+            color: white;
+            padding: 1rem;
             text-align: center;
-            color: #1b5e20;
-            margin-bottom: 30px;
         }
 
-        .animal-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 40px;
+        .container {
+            padding: 1rem 2rem;
         }
 
-        .animal-card {
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 20px 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        h2 {
+            color: #333;
+            margin-top: 2rem;
+        }
+
+        .habitat-comment {
+            margin-bottom: 1rem;
+        }
+
+        textarea {
+            width: 100%;
+            height: 60px;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            resize: vertical;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: 100%;
+            padding: 0.4rem;
+            box-sizing: border-box;
+        }
+
+        tr:hover {
+            background: #e0f2f1;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.3s;
         }
 
-        .animal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-            background-color: #c8e6c9;
-        }
-
-        .animal-detail {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .animal-detail h2 {
-            color: #1b5e20;
-            margin-bottom: 20px;
-        }
-
-        .animal-detail p {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-
-        .animal-detail span {
-            font-weight: bold;
-            color: #33691e;
-        }
-
-        .animal-detail img {
-            width: 150px;
-            height: auto;
-            border-radius: 10px;
-            margin: 10px 10px 0 0;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        #animalDetail {
+        .hidden {
             display: none;
         }
     </style>
 </head>
 
 <body>
-    <h1>🐾 Nos Animaux de la Savane</h1>
+    <header>
+        <h1>Espace Vétérinaire</h1>
+    </header>
 
-    <div class="animal-list">
-        <div class="animal-card" data-id="1">🦁 Simba</div>
-        <div class="animal-card" data-id="2">🐆 Kali</div>
-    </div>
+    <main class="container">
 
-    <div class="animal-detail" id="animalDetail">
-        <h2>Détail de l'animal</h2>
-        <p><strong>Prénom :</strong> <span id="name"></span></p>
-        <p><strong>Race :</strong> <span id="race"></span></p>
-        <p><strong>Habitat :</strong> <span id="habitat"></span></p>
-        <p><strong>État :</strong> <span id="etat"></span></p>
-        <p><strong>Avis du vétérinaire :</strong> <span id="avis"></span></p>
-        <div id="images" style="margin-top: 20px;"></div>
-    </div>
+        <!-- Habitats avec commentaires -->
+        <section>
+            <h2>Commentaires sur les habitats</h2>
+            <div class="habitat-comment">
+                <label for="savane-comment">Savane :</label>
+                <textarea id="savane-comment" placeholder="État général, suggestions..."></textarea>
+            </div>
+            <div class="habitat-comment">
+                <label for="jungle-comment">Jungle :</label>
+                <textarea id="jungle-comment" placeholder="État général, suggestions..."></textarea>
+            </div>
+        </section>
+
+        <!-- Tableau des animaux -->
+        <section>
+            <h2>Suivi des animaux</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Animal</th>
+                        <th>État</th>
+                        <th>Nourriture</th>
+                        <th>Grammage (g)</th>
+                        <th>Date</th>
+                        <th>Détails</th>
+                    </tr>
+                </thead>
+                <tbody id="animal-table">
+                    <tr>
+                        <td data-animal="lion">Lion</td>
+                        <td><input type="text" placeholder="Bon état"></td>
+                        <td><input type="text" placeholder="Viande rouge"></td>
+                        <td><input type="number" placeholder="500"></td>
+                        <td><input type="date"></td>
+                        <td><input type="text" placeholder="Dents en bon état..."></td>
+                    </tr>
+                    <tr>
+                        <td data-animal="zèbre">Zèbre</td>
+                        <td><input type="text" placeholder="Fatigué"></td>
+                        <td><input type="text" placeholder="Herbe fraîche"></td>
+                        <td><input type="number" placeholder="300"></td>
+                        <td><input type="date"></td>
+                        <td><input type="text" placeholder="Boiterie jambe avant..."></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Détail au clic -->
+        <section id="animal-detail" class="hidden">
+            <h2>Détails de l’animal</h2>
+            <p id="animal-name"></p>
+            <p>Dernier avis vétérinaire :</p>
+            <p id="veto-opinion"></p>
+        </section>
+
+    </main>
+
 
     <script>
-        const animalData = {
-            1: {
-                prenom: "Simba",
-                race: "Lion",
-                habitat: "Savane Africaine",
-                etat: "En bonne santé",
-                avis: "Aucun problème détecté.",
-                images: [
-                    "https://via.placeholder.com/150?text=Simba+1",
-                    "https://via.placeholder.com/150?text=Simba+2"
-                ]
-            },
-            2: {
-                prenom: "Kali",
-                race: "Guépard",
-                habitat: "Savane Africaine",
-                etat: "Blessure à la patte",
-                avis: "Repos recommandé pendant 5 jours.",
-                images: [
-                    "https://via.placeholder.com/150?text=Kali"
-                ]
-            }
+        const opinions = {
+            lion: "Le lion est en excellente forme. Bonne dentition. Surveillance poids.",
+            zèbre: "Léger boitement. Attention à la jambe avant gauche."
         };
 
-        const cards = document.querySelectorAll('.animal-card');
-        const detail = document.getElementById('animalDetail');
-        const nameEl = document.getElementById('name');
-        const raceEl = document.getElementById('race');
-        const habitatEl = document.getElementById('habitat');
-        const etatEl = document.getElementById('etat');
-        const avisEl = document.getElementById('avis');
-        const imagesEl = document.getElementById('images');
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const id = card.dataset.id;
-                const animal = animalData[id];
-
-                nameEl.textContent = animal.prenom;
-                raceEl.textContent = animal.race;
-                habitatEl.textContent = animal.habitat;
-                etatEl.textContent = animal.etat;
-                avisEl.textContent = animal.avis;
-
-                imagesEl.innerHTML = '';
-                animal.images.forEach(src => {
-                    const img = document.createElement('img');
-                    img.src = src;
-                    imagesEl.appendChild(img);
-                });
-
-                detail.style.display = 'block';
-                detail.scrollIntoView({ behavior: 'smooth' });
+        // Ajouter comportement au clic
+        document.querySelectorAll('[data-animal]').forEach(cell => {
+            cell.addEventListener('click', () => {
+                const animal = cell.dataset.animal;
+                document.getElementById('animal-name').textContent = `Animal : ${animal.charAt(0).toUpperCase() + animal.slice(1)}`;
+                document.getElementById('veto-opinion').textContent = opinions[animal] || "Aucun avis enregistré.";
+                document.getElementById('animal-detail').classList.remove('hidden');
+                window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
             });
         });
     </script>

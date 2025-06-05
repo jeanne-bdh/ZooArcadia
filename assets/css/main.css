@@ -11784,6 +11784,7 @@ h3, .h3 {
   color: #462f14;
   background-color: #FFF7DA;
   border: #FFF7DA;
+  border: 1px solid #e6c9a6;
 }
 
 legend {
@@ -11792,6 +11793,14 @@ legend {
   font-size: 1rem;
   line-height: 1.5;
   color: #212529;
+}
+
+textarea {
+  height: 38px;
+}
+
+.input-qty {
+  width: 7rem;
 }
 
 .name-zoo a {
@@ -11983,4 +11992,29 @@ legend {
 
 .link-card-session {
   color: #76A182;
+}
+
+@media (min-width: 768px) {
+  .h3-left {
+    padding-left: 7rem;
+  }
+  .h3-right {
+    padding-right: 7rem;
+  }
+}
+@media (min-width: 992px) {
+  .h3-left {
+    padding-left: 11rem;
+  }
+  .h3-right {
+    padding-right: 11rem;
+  }
+}
+@media (min-width: 1200px) {
+  .h3-left {
+    padding-left: 13.5rem;
+  }
+  .h3-right {
+    padding-right: 13.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
