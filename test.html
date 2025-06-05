@@ -159,6 +159,109 @@
         });
     </script>
 
+<section class="table-responsive mt-4 mx-lg-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Animal</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">État</th>
+                <th scope="col">Nourriture</th>
+                <th scope="col">Quantité (g)</th>
+                <th scope="col">Date</th>
+                <th scope="col">Détails</th>
+                <th scope="col">Soumettre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select class="form-select" aria-label="Sélection animal">
+                        <option selected>Animal</option>
+                        <option value="1">Capybara</option>
+                        <option value="2">Gorille</option>
+                        <option value="3">Iguane</option>
+                        <option value="4">Paresseux</option>
+                        <option value="5">Tigre</option>
+                        <option value="6">Toucan</option>
+                        <option value="7">Crocodile</option>
+                        <option value="8">Grenouille</option>
+                        <option value="9">Héron</option>
+                        <option value="10">Loutre</option>
+                        <option value="11">Serpent</option>
+                        <option value="12">Tortue</option>
+                        <option value="13">Babouin</option>
+                        <option value="14">Eléphant</option>
+                        <option value="15">Girafe</option>
+                        <option value="16">Lion</option>
+                        <option value="17">Rhinocéros</option>
+                        <option value="18">Zèbre</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" aria-label="Sélection Prénom">
+                        <option selected>Prénom</option>
+                        <option value="1">Alicia</option>
+                        <option value="2">Kitkat</option>
+                        <option value="3">Bigmac</option>
+                        <option value="4">Turbo</option>
+                        <option value="5">Milou</option>
+                        <option value="6">Rio</option>
+                        <option value="7">Gaby</option>
+                        <option value="8">Sacha</option>
+                        <option value="9">Arnold</option>
+                        <option value="10">Eléna</option>
+                        <option value="11">Vortex</option>
+                        <option value="12">Fred</option>
+                        <option value="13">Marcel</option>
+                        <option value="14">Mina</option>
+                        <option value="15">Britney</option>
+                        <option value="16">Claude</option>
+                        <option value="17">Praline</option>
+                        <option value="18">Ray</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" aria-label="Sélection état">
+                        <option selected>Etat</option>
+                        <option value="1">Excellent</option>
+                        <option value="2">Très bon</option>
+                        <option value="3">Bon</option>
+                        <option value="4">Correct</option>
+                        <option value="5">Convalescent</option>
+                        <option value="6">Stable</option>
+                        <option value="7">Affaibli</option>
+                        <option value="8">Mauvais</option>
+                        <option value="9">Très mauvais</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-select" aria-label="Sélection nourriture">
+                        <option selected>Nourriture</option>
+                        <option value="1">Fruits</option>
+                        <option value="2">Herbes</option>
+                        <option value="3">Insectes</option>
+                        <option value="4">Poissons</option>
+                        <option value="5">Souris</option>
+                        <option value="6">Oiseaux</option>
+                        <option value="7">Crustacés</option>
+                        <option value="8">Feuilles d'acacia</option>
+                        <option value="9">Viande</option>
+                        <option value="10">Ecorces</option>
+                        <option value="11">Plantes aquatiques</option>
+                        <option value="12">Fleurs</option>
+                        <option value="13">Oeufs</option>
+                    </select>
+                </td>
+                <td class="input-qty"><input type="number" class="form-control" placeholder="0"></td>
+                <td><input type="date" class="form-control"></td>
+                <td><textarea class="form-control" placeholder="Dents en bon état..."></textarea></td>
+                <td class="text-center"><button type="button" class="btn text-black"><i class="bi bi-check-square-fill"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
 </body>
 
 </html>
