@@ -11868,6 +11868,28 @@ legend {
   fill: #1b4b28;
 }
 
+.img-habitat-home {
+  position: relative;
+}
+.img-habitat-home img {
+  transition: all 0.3s ease-in-out;
+}
+.img-habitat-home .view-habitat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.img-habitat-home:hover img {
+  filter: brightness(0.5);
+}
+.img-habitat-home:hover .view-habitat {
+  opacity: 1;
+}
+
 .carousel-inner {
   height: 33vh;
 }

@@ -1,8 +1,39 @@
 <!-- SECTION : HERO -->
-<section class="hero px-3 justify-content-center align-items-center">
+<section class="hero text-center d-flex justify-content-center align-items-center">
     <h1>Consulter les comptes rendus animaliers</h1>
 </section>
 
+<!-- SECTION : FILTERS -->
+<section class="row mt-5 mx-3 mx-lg-5 px-lg-5">
+        <div class="col-12 col-md-6 mb-4">
+            <label for="animal" class="form-label">Animal</label>
+            <select class="form-select" aria-label="Sélection animal" id="animal" name="animal">
+                <option selected>-- Sélectionner un animal --</option>
+                <option value="1">Capybara</option>
+                <option value="2">Gorille</option>
+                <option value="3">Iguane</option>
+                <option value="4">Paresseux</option>
+                <option value="5">Tigre</option>
+                <option value="6">Toucan</option>
+                <option value="7">Crocodile</option>
+                <option value="8">Grenouille</option>
+                <option value="9">Héron</option>
+                <option value="10">Loutre</option>
+                <option value="11">Serpent</option>
+                <option value="12">Tortue</option>
+                <option value="13">Babouin</option>
+                <option value="14">Eléphant</option>
+                <option value="15">Girafe</option>
+                <option value="16">Lion</option>
+                <option value="17">Rhinocéros</option>
+                <option value="18">Zèbre</option>
+            </select>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+            <label for="dateReport" class="form-label">Date</label>
+            <input type="date" class="form-control" id="dateReport" name="dateReport">
+        </div>
+</section>
 
 <!-- SECTION : REPORT VET -->
 <section class="table-responsive my-5 mx-lg-5">

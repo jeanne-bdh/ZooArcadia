@@ -5,6 +5,35 @@
     }
 }
 
+.img-habitat-home {
+    position: relative;
+
+    img {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .view-habitat {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+        img {
+            filter: brightness(0.5);
+        }
+
+        .view-habitat {
+            opacity: 1;
+        }
+    }
+}
+
+
 .carousel-inner {
     height: 33vh;
 
