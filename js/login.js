@@ -1,52 +1,42 @@
-const inputEmailCo = document.getElementById("emailInputCo");
-const inputPasswordCo = document.getElementById("passwordInputCo");
-const btnValidCo = document.getElementById("btn-validCo");
+const LoginFormValidation = {
+    inputs: {
+        email: document.getElementById("emailInputCo"),
+        password: document.getElementById("passwordInputCo")
+    },
+    button: document.getElementById("btn-validCo"),
 
-inputEmailCo.addEventListener("keyup", validateFormCo);
-inputPasswordCo.addEventListener("keyup", validateFormCo);
+    init() {
+        this.inputs.email.addEventListener("keyup", () => this.handleEmailInput());
+        this.inputs.password.addEventListener("keyup", () => this.handlePasswordInput());
+    },
 
-// Fonction valide le formulaire
-function validateFormCo() {
-    const emailCoOk = validateEmailCo(inputEmailCo);
-    const passwordCoOk = validatePasswordCo(inputPasswordCo);
+    handleEmailInput() {
+        const emailOk = this.validateEmail(this.inputs.email);
+        this.button.disabled = !(emailOk);
+    },
 
-    // Pour que le bouton soit cliquable
-    if (emailCoOk && passwordCoOk) {
-        btnValidCo.disabled = false;
-    }
-    else {
-        btnValidCo.disabled = true;
-    }
-}
+    handlePasswordInput() {
+        const emailOk = this.validateEmail(this.inputs.email);
+        const passwordOk = this.validatePassword(this.inputs.password);
+        this.button.disabled = !(emailOk && passwordOk);
+    },
 
-// Fonction valide l'email
-function validateEmailCo(input) {
-    const emailCoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const mailCoUser = input.value;
-    if (mailCoUser.match(emailCoRegex)) {
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
-    }
-    else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
+    validateEmail(input) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return this.toggleValidation(input, regex);
+    },
 
-// Fonction valide le mot de passe
-function validatePasswordCo(input) {
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
-    const passwordUser = input.value;
-    if (passwordUser.match(passwordRegex)) {
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-        return true;
+    validatePassword(input) {
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
+        return this.toggleValidation(input, regex);
+    },
+
+    toggleValidation(input, regex) {
+        const isValid = regex.test(input.value);
+        input.classList.toggle("is-valid", isValid);
+        input.classList.toggle("is-invalid", !isValid);
+        return isValid;
     }
-    else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-        return false;
-    }
-}
+
+};
+LoginFormValidation.init();
