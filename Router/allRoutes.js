@@ -23,7 +23,7 @@ export const allRoutes = [
     new Route("/dashboard", "Dashboard", "/pages/admin/dashboard.html"),
     new Route("/register", "Créer des comptes", "/pages/admin/register.html", "/js/register.js"),
     new Route("/crud", "Comptes rendus animaliers", "/pages/admin/crud/crud.html"),
-    new Route("/crudHours", "Modifier les horaires", "/pages/admin/crud/crud-hours.html"),
+    new Route("/crudHours", "Modifier les horaires", "/pages/admin/crud/crud-hours.html", "/js/valid-crud-hours.js"),
     new Route("/crudServAdmin", "Modifier les services", "/pages/admin/crud/crud-services-admin.html"),
     new Route("/crudHabitats", "Modifier les habitats", "/pages/admin/crud/crud-habitats.html"),
     new Route("/crudAnimals", "Modifier les animaux", "/pages/admin/crud/crud-animals.html"),
