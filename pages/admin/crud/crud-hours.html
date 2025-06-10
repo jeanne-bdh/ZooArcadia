@@ -8,8 +8,8 @@
     <form class="row m-3 m-md-5">
         <div class="mb-3">
             <label for="dayInput" class="form-label">Jours de la semaine</label>
-            <select class="form-select" aria-label="Sélection du jour">
-                <option selected>-- Sélectionner un jour --</option>
+            <select class="form-select" aria-label="Sélection du jour" id="dayInput" name="dayInput" required>
+                <option value="" selected>-- Sélectionner un jour --</option>
                 <option value="1">Lundi</option>
                 <option value="2">Mardi</option>
                 <option value="3">Mercredi</option>
@@ -28,7 +28,7 @@
             <input type="time" class="form-control" id="closingHours"></input>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-black mt-3">Mettre à jour</button>
+            <button type="submit" class="btn btn-black mt-3" id="btn-hours">Mettre à jour</button>
         </div>
     </form>
 </section>

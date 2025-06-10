@@ -1,15 +1,14 @@
-const RegisterFormValidation = {
-    inputs: {
-        email: document.getElementById("emailInputReg"),
-        password: document.getElementById("pwdInputReg"),
-        confirmPassword: document.getElementById("confirmPwdInputReg")
+const hoursFormValidation = {
+    selctions: {
+        day: document.getElementById("dayInput"),
+        openTime: document.getElementById("openingHours"),
+        closeTime: document.getElementById("closingHours")
     },
-    selection: document.getElementById("roleReg"),
-    button: document.getElementById("btn-register"),
+    button: document.getElementById("btn-hours"),
 
     init() {
-        this.inputs.email.addEventListener("keyup", () => this.handleEmailInput());
-        this.inputs.password.addEventListener("keyup", () => this.handlePasswordInput());
+        this.selection.day.addEventListener("keyup", () => this.handleEmailInput());
+        this.selection.day.addEventListener("keyup", () => this.handlePasswordInput());
         this.inputs.confirmPassword.addEventListener("keyup", () => this.handleConfirmPwdInput());
         this.selection.addEventListener("change", () => this.handleRoleSelect());
     },
