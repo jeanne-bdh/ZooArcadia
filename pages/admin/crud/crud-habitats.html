@@ -58,9 +58,11 @@
                 <td class="text-center"></td>
                 <td class="text-center"></td>
                 <td class="text-center">
-                    <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editHabitatModal"><i
+                            class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn"><i class="bi bi-eye"></i></button>
-                    <button type="button" class="btn"><i class="bi bi-trash3"></i></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteHabitatModal"><i
+                            class="bi bi-trash3"></i></button>
                 </td>
             </tr>
             <tr>
@@ -81,9 +83,11 @@
                 <td class="text-center"></td>
                 <td class="text-center"></td>
                 <td class="text-center">
-                    <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editHabitatModal"><i
+                            class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn"><i class="bi bi-eye"></i></button>
-                    <button type="button" class="btn"><i class="bi bi-trash3"></i></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteHabitatModal"><i
+                            class="bi bi-trash3"></i></button>
                 </td>
             </tr>
             <tr>
@@ -108,11 +112,69 @@
                 <td class="text-center"></td>
                 <td class="text-center"></td>
                 <td class="text-center">
-                    <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#editHabitatModal"><i
+                            class="bi bi-pencil-square"></i></button>
                     <button type="button" class="btn"><i class="bi bi-eye"></i></button>
-                    <button type="button" class="btn"><i class="bi bi-trash3"></i></button>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#deleteHabitatModal"><i
+                            class="bi bi-trash3"></i></button>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
+
+<!-- MODAL : EDIT HABITAT -->
+<div class="modal fade" id="editHabitatModal" tabindex="-1" aria-labelledby="editHabitatModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="editHabitatModalLabel">Modifier l'habitat : </h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="row m-3">
+                    <div class="mb-3">
+                        <label for="habitatNameInput" class="form-label">Nom de l'habitat</label>
+                        <input type="text" class="form-control" id="habitatNameInput"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descHabitatInput" class="form-label">Description de l'habitat</label>
+                        <textarea class="form-control" id="descHabitatInput"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainImgHabitat" class="form-label">Image principale (page d'accueil)</label>
+                        <input type="file" class="form-control" id="mainImgHabitat"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imgHabitatPage" class="form-label">Images (page des habitats)</label>
+                        <input type="file" class="form-control" id="imgHabitatPage"></input>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-secondary">Enregister</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL : DELETE HABITAT -->
+<div class="modal fade" id="deleteHabitatModal" tabindex="-1" aria-labelledby="deleteHabitatModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="deleteHabitatModalLabel">Etes-vous sûr de vouloir supprimer cet habitat ?</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Nom de l'habitat</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
