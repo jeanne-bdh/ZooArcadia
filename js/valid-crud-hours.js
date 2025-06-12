@@ -7,12 +7,12 @@ const hoursFormValidation = {
     button: document.getElementById("btn-hours"),
 
     init() {
-        this.selection.addEventListener("change", () => this.updateButtonState());
-        this.inputs.openTime.addEventListener("change", () => this.updateButtonState());
-        this.inputs.closeTime.addEventListener("change", () => this.updateButtonState());
+        this.selection.addEventListener("change", () => this.buttonState());
+        this.inputs.openTime.addEventListener("change", () => this.buttonState());
+        this.inputs.closeTime.addEventListener("change", () => this.buttonState());
     },
 
-    updateButtonState() {
+    buttonState() {
         const dayOk = this.validateDaySelect(this.selection);
         const openOk = this.validateOpenInput(this.inputs.openTime);
         const closeOk = this.validateCloseInput(this.inputs.closeTime);

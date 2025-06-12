@@ -8,9 +8,9 @@
 <section class="container">
     <form class="row m-3 m-md-5">
         <div class="col-12 col-md-6 col-lg-4 mb-3">
-            <label for="animalInput" class="form-label">Animal</label>
-            <select class="form-select" aria-label="Sélection animal">
-                <option selected>-- Sélectionner un animal --</option>
+            <label for="animalSelect" class="form-label">Animal</label>
+            <select class="form-select" aria-label="Sélection animal" id="animalSelect" required>
+                <option value="" selected>-- Sélectionner un animal --</option>
                 <option value="1">Capybara</option>
                 <option value="2">Gorille</option>
                 <option value="3">Iguane</option>
@@ -30,11 +30,14 @@
                 <option value="17">Rhinocéros</option>
                 <option value="18">Zèbre</option>
             </select>
+            <div class="invalid-feedback">
+                Veuillez sélectionner un animal
+            </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-3">
-            <label for="nameInput" class="form-label">Prénom</label>
-            <select class="form-select" aria-label="Sélection Prénom">
-                <option selected>-- Sélectionner le prénom --</option>
+            <label for="nameSelect" class="form-label">Prénom</label>
+            <select class="form-select" aria-label="Sélection Prénom" id="nameSelect" required>
+                <option value="" selected>-- Sélectionner le prénom --</option>
                 <option value="1">Alicia</option>
                 <option value="2">Kitkat</option>
                 <option value="3">Bigmac</option>
@@ -54,19 +57,28 @@
                 <option value="17">Praline</option>
                 <option value="18">Ray</option>
             </select>
+            <div class="invalid-feedback">
+                Veuillez sélectionner un prénom
+            </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-3">
             <label for="dateFood" class="form-label">Date</label>
             <input type="date" class="form-control" id="dateFood" required></input>
+            <div class="invalid-feedback">
+                Veuillez entrer une date valide
+            </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-3">
             <label for="hourFood" class="form-label">Heure</label>
             <input type="time" class="form-control" id="hourFood" required></input>
+            <div class="invalid-feedback">
+                Veuillez entrer une heure
+            </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-3">
-            <label for="food" class="form-label">Nourriture</label>
-            <select class="form-select" aria-label="Sélection nourriture">
-                <option selected>-- Sélectionner la nourriture --</option>
+            <label for="foodSelect" class="form-label">Nourriture</label>
+            <select class="form-select" aria-label="Sélection nourriture" id="foodSelect" required>
+                <option value="" selected>-- Sélectionner la nourriture --</option>
                 <option value="1">Fruits</option>
                 <option value="2">Herbes</option>
                 <option value="3">Insectes</option>
@@ -81,13 +93,19 @@
                 <option value="12">Fleurs</option>
                 <option value="13">Oeufs</option>
             </select>
+            <div class="invalid-feedback">
+                Veuillez sélectionner une nourriture
+            </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 mb-3">
             <label for="quantity" class="form-label">Quantité (g)</label>
             <input type="number" class="form-control" id="quantity" placeholder="0" required></input>
+            <div class="invalid-feedback">
+                Veuillez entrer une quantité valide
+            </div>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-black mt-3">Soumettre</button>
+            <button type="submit" class="btn btn-black mt-3" id="btn-food-conso">Soumettre</button>
         </div>
     </form>
 </section>

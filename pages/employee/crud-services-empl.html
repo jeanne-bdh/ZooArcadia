@@ -9,21 +9,33 @@
         <div class="mb-3">
             <label for="titleServInput" class="form-label">Titre du service</label>
             <input type="text" class="form-control" id="titleServInput"></input>
+            <div class="invalid-feedback">
+                Veuillez entrer un titre ayant au moins 5 caractères
+            </div>
         </div>
         <div class="mb-3">
             <label for="descServInput" class="form-label">Description du service</label>
             <textarea class="form-control" id="descServInput"></textarea>
+            <div class="invalid-feedback">
+                Veuillez entrer un message ayant au moins 20 caractères
+            </div>
         </div>
         <div class="mb-3">
             <label for="iconServInput" class="form-label">Icône (page d'accueil)</label>
             <input type="file" class="form-control" id="iconServInput"></input>
+            <div class="invalid-feedback">
+                Veuillez télécharger une icône
+            </div>
         </div>
         <div class="mb-3">
             <label for="imgServInput" class="form-label">Images (page des services)</label>
             <input type="file" class="form-control" id="imgServInput"></input>
+            <div class="invalid-feedback">
+                Veuillez télécharger une ou plusieurs images
+            </div>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-black mt-3">Mettre à jour</button>
+            <button type="submit" class="btn btn-black mt-3" id="btn-services">Ajouter</button>
         </div>
     </form>
 </section>
@@ -37,6 +49,7 @@
                 <th scope="col">Description</th>
                 <th scope="col" class="text-center">Icônes</th>
                 <th scope="col" class="text-center">Images</th>
+                <th scope="col" class="text-center">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -54,6 +67,11 @@
                 </td>
                 <td class="text-center"><img src="/assets/images/home/services/icon-restaurant.svg" alt=""></td>
                 <td class="text-center"><img class="w-50" src="/assets/images/services/restauration.jpg" alt=""></td>
+                <td class="text-center">
+                    <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn"><i class="bi bi-eye"></i></button>
+                    <button type="button" class="btn"><i class="bi bi-trash3"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Visite guidée des habitats (gratuit)</td>
@@ -62,6 +80,11 @@
                     informative sur les animaux et leur habitat.</td>
                 <td class="text-center"><img src="/assets/images/home/services/icon-binoculars.svg" alt=""></td>
                 <td class="text-center"><img class="w-50" src="/assets/images/services/visite-guidee.jpg" alt=""></td>
+                <td class="text-center">
+                    <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn"><i class="bi bi-eye"></i></button>
+                    <button type="button" class="btn"><i class="bi bi-trash3"></i></button>
+                </td>
             </tr>
             <tr>
                 <td>Visite du zoo en petit train</td>
@@ -70,6 +93,11 @@
                 </td>
                 <td class="text-center"><img src="/assets/images/home/services/icon-train.svg" alt=""></td>
                 <td class="text-center"><img class="w-50" src="/assets/images/services/petit-train.jpg" alt=""></td>
+                <td class="text-center">
+                    <button type="button" class="btn"><i class="bi bi-pencil-square"></i></button>
+                    <button type="button" class="btn"><i class="bi bi-eye"></i></button>
+                    <button type="button" class="btn"><i class="bi bi-trash3"></i></button>
+                </td>
             </tr>
         </tbody>
     </table>

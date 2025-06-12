@@ -9,10 +9,16 @@
         <div class="mb-3">
             <label for="titleServInput" class="form-label">Titre du service</label>
             <input type="text" class="form-control" id="titleServInput"></input>
+            <div class="invalid-feedback">
+                Veuillez entrer un titre ayant au moins 5 caractères
+            </div>
         </div>
         <div class="mb-3">
             <label for="descServInput" class="form-label">Description du service</label>
             <textarea class="form-control" id="descServInput"></textarea>
+            <div class="invalid-feedback">
+                Veuillez entrer un message ayant au moins 20 caractères
+            </div>
         </div>
         <div class="mb-3">
             <label for="iconServInput" class="form-label">Icône (page d'accueil)</label>
@@ -23,7 +29,7 @@
             <input type="file" class="form-control" id="imgServInput"></input>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-black mt-3">Mettre à jour</button>
+            <button type="submit" class="btn btn-black mt-3" id="btn-services">Mettre à jour</button>
         </div>
     </form>
 </section>
