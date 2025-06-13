@@ -40,3 +40,26 @@ const LoginFormValidation = {
 
 };
 LoginFormValidation.init();
+
+
+// Simulation de connexion
+const emailInput = document.getElementById('emailInputCo');
+const passwordInput = document.getElementById('passwordInputCo');
+const loginButton = document.getElementById('btn-validCo');
+
+loginButton.addEventListener('click', checkCredentials);
+
+function checkCredentials() {
+
+    if (emailInput.value == "test@mail.com" && passwordInput.value == "Password123$") {
+
+        const token = "fake-jwt-token";
+        setToken(token);
+
+        setCookie(roleCookieName, "admin", 7);
+        window.location.replace("/");
+    } else {
+        emailInput.classList.add('is-invalid');
+        passwordInput.classList.add('is-invalid');
+    }
+}
