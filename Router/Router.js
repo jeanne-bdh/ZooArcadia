@@ -66,11 +66,11 @@ const LoadContentPage = async () => {
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)
-const routeEvent = (event) => {
-    event = event || window.event;
-    event.preventDefault();
+const routeEvent = (e) => {
+    e = e || window.e;
+    e.preventDefault();
     // Mise à jour de l'URL dans l'historique du navigateur
-    window.history.pushState({}, "", event.target.href);
+    window.history.pushState({}, "", e.target.href);
     // Chargement du contenu de la nouvelle page
     LoadContentPage();
 };
