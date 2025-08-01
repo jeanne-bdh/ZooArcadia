@@ -54,7 +54,7 @@ if (isConnected()) {
     alert("Vous êtes connecté");
 }
 else {
-    alert("Vous n'êtes pas connecté");
+    //
 }
 
 function showButtonsLoginLogout() {

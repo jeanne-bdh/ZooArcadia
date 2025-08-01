@@ -19,7 +19,7 @@ export const allRoutes = [
     new Route("/privacyPolicy", "Politique de confidentialité", "/pages/legal-infos/privacy_policy.html", []),
     new Route("/admin", "Administrateur", "/pages/admin/admin_session.html", [admin]),
     new Route("/reportVet", "Comptes rendus animaliers", "/pages/admin/report_vet.html", [admin]),
-    new Route("/dashboard", "Dashboard", "/pages/admin/dashboard.html", [admin]),
+    new Route("/dashboard", "Dashboard", "/pages/admin/dashboard.html", [admin], "js/dashboard.js"),
     new Route("/register", "Créer des comptes", "/pages/admin/register.html", [admin], "/js/register.js"),
     new Route("/crud", "Comptes rendus animaliers", "/pages/admin/crud/crud.html", [admin]),
     new Route("/crudHours", "Modifier les horaires", "/pages/admin/crud/crud-hours.html", [admin], "/js/valid-crud-hours.js"),
