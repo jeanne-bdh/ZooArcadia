@@ -1,7 +1,35 @@
 // customize some Bootstrap variables
+$light :#FFF7DA;
+$primary: #D1EEDB;
+$tertiary: #A6C5B1;
+$secondary: #76A182;
+$dark: #1b4b28;
+$black: #462f14;
+$white: #ffffff;
+$danger: #dc3545;
+$font-family-content: "Hind Madurai", sans-serif !default;
+$font-family-headline: "Scada", sans-serif !default;
+$font-family-logo: "Sigmar One", sans-serif !default;
 
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "tertiary": $tertiary,
+    "light": $light,
+    "dark": $dark,
+    "black": $black,
+    "white": $white,
+    "danger": $danger,
+);
 
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
 // Custom styles
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/header";
+@import "layout/hero";
+
+@import "pages/home";
