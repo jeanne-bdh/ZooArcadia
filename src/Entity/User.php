@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
@@ -30,8 +31,8 @@ class User implements PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 50)]
     private ?string $firstname = null;
 
-    #[ORM\ManyToOne(inversedBy: 'users')]
-    private ?role $role = null;
+    #[ORM\Column(type: Types::ARRAY)]
+    private array $role = [];
 
     public function getId(): ?int
     {
@@ -116,21 +117,12 @@ class User implements PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getRoles(): array
+    public function getRole(): array
     {
-        $roles = [];
-
-        if ($this->role) {
-            $roles[] = $this->role->getRole();
-        }
-
-        // Par sécurité, on ajoute ROLE_USER par défaut
-        $roles[] = 'ROLE_USER';
-
-        return array($roles);
+        return $this->role;
     }
 
-    public function setRole(?role $role): static
+    public function setRole(array $role): static
     {
         $this->role = $role;
 
