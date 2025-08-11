@@ -2,7 +2,13 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Animal;
+use App\Entity\Consultation;
+use App\Entity\Habitat;
+use App\Entity\OpeningHours;
+use App\Entity\Service;
 use App\Entity\User;
+use App\Entity\VeterinaryReport;
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -46,7 +52,12 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Créer un compte', 'fa-solid fa-list', User::class);
-        //yield MenuItem::linkToCrud('Gérer les services', 'fa-solid fa-list',)
+        yield MenuItem::linkToCrud('Créer un compte', 'fa-solid fa-user', User::class);
+        yield MenuItem::linkToCrud('Gérer les animaux', 'fa-solid fa-paw', Animal::class);
+        yield MenuItem::linkToCrud('Gérer les habitats', 'fa-solid fa-mountain', Habitat::class);
+        yield MenuItem::linkToCrud('Gérer les horaires', 'fa-solid fa-clock', OpeningHours::class);
+        yield MenuItem::linkToCrud('Gérer les services', 'fa-solid fa-bell-concierge', Service::class);
+        yield MenuItem::linkToCrud('Rapports vétérinaires', 'fa-solid fa-stethoscope', VeterinaryReport::class);
+        yield MenuItem::linkToCrud('Statistiques', 'fa-solid fa-chart-simple', Consultation::class);
     }
 }

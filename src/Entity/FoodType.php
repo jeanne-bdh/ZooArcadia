@@ -21,13 +21,13 @@ class FoodType
     /**
      * @var Collection<int, Food>
      */
-    #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'foodType', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'FoodType', orphanRemoval: true)]
     private Collection $food;
 
     /**
      * @var Collection<int, VeterinaryReport>
      */
-    #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'foodType', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'FoodType', orphanRemoval: true)]
     private Collection $veterinaryReports;
 
     public function __construct()
@@ -73,12 +73,10 @@ class FoodType
 
     public function removeFood(Food $food): static
     {
-        if ($this->food->removeElement($food)) {
+        if ($this->food->removeElement($food) && ($food->getFoodType() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($food->getFoodType() === $this) {
                 $food->setFoodType(null);
             }
-        }
 
         return $this;
     }
@@ -103,12 +101,10 @@ class FoodType
 
     public function removeVeterinaryReport(VeterinaryReport $veterinaryReport): static
     {
-        if ($this->veterinaryReports->removeElement($veterinaryReport)) {
+        if ($this->veterinaryReports->removeElement($veterinaryReport) && ($veterinaryReport->getFoodType() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($veterinaryReport->getFoodType() === $this) {
                 $veterinaryReport->setFoodType(null);
             }
-        }
 
         return $this;
     }

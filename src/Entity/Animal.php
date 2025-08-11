@@ -25,29 +25,29 @@ class Animal
     /**
      * @var Collection<int, Food>
      */
-    #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'animal', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'Animal', orphanRemoval: true)]
     private Collection $food;
 
     /**
      * @var Collection<int, Breed>
      */
-    #[ORM\ManyToMany(targetEntity: Breed::class, inversedBy: 'animals')]
+    #[ORM\ManyToMany(targetEntity: Breed::class, inversedBy: 'Animals')]
     private Collection $breed;
 
-    #[ORM\ManyToOne(inversedBy: 'animals')]
+    #[ORM\ManyToOne(inversedBy: 'Animals')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Habitat $habitat = null;
 
     /**
      * @var Collection<int, Consultation>
      */
-    #[ORM\OneToMany(targetEntity: Consultation::class, mappedBy: 'animal', orphanRemoval: true)]
+    #[ORM\OneToMany(targetEntity: Consultation::class, mappedBy: 'Animal', orphanRemoval: true)]
     private Collection $consultations;
 
     /**
      * @var Collection<int, VeterinaryReport>
      */
-    #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'animal')]
+    #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'Animal')]
     private Collection $veterinaryReports;
 
     public function __construct()
@@ -107,12 +107,10 @@ class Animal
 
     public function removeFood(Food $food): static
     {
-        if ($this->food->removeElement($food)) {
+        if ($this->food->removeElement($food) && ($food->getAnimal() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($food->getAnimal() === $this) {
                 $food->setAnimal(null);
             }
-        }
 
         return $this;
     }
@@ -173,12 +171,10 @@ class Animal
 
     public function removeConsultation(Consultation $consultation): static
     {
-        if ($this->consultations->removeElement($consultation)) {
+        if ($this->consultations->removeElement($consultation) && ($consultation->getAnimal() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($consultation->getAnimal() === $this) {
                 $consultation->setAnimal(null);
             }
-        }
 
         return $this;
     }
@@ -203,12 +199,10 @@ class Animal
 
     public function removeVeterinaryReport(VeterinaryReport $veterinaryReport): static
     {
-        if ($this->veterinaryReports->removeElement($veterinaryReport)) {
+        if ($this->veterinaryReports->removeElement($veterinaryReport) && ($veterinaryReport->getAnimal() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($veterinaryReport->getAnimal() === $this) {
                 $veterinaryReport->setAnimal(null);
             }
-        }
 
         return $this;
     }
