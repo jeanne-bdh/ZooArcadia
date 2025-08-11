@@ -29,6 +29,10 @@ $theme-colors: (
 @import "base/reset";
 @import "base/typography";
 
+@import "components/buttons";
+@import "components/components";
+@import "components/input";
+
 @import "layout/header";
 @import "layout/hero";
 

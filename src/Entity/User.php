@@ -3,13 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
-class User implements PasswordAuthenticatedUserInterface
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -31,8 +34,33 @@ class User implements PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 50)]
     private ?string $firstname = null;
 
-    #[ORM\Column(type: Types::ARRAY)]
-    private array $role = [];
+    #[ORM\Column(name : "role", type: Types::JSON)]
+    private array $roles = [];
+
+    /**
+     * @var Collection<int, Food>
+     */
+    #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'user', orphanRemoval: true)]
+    private Collection $food;
+
+    /**
+     * @var Collection<int, CommentHabitat>
+     */
+    #[ORM\OneToMany(targetEntity: CommentHabitat::class, mappedBy: 'user')]
+    private Collection $commentHabitats;
+
+    /**
+     * @var Collection<int, VeterinaryReport>
+     */
+    #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'user', orphanRemoval: true)]
+    private Collection $veterinaryReports;
+
+    public function __construct()
+    {
+        $this->food = new ArrayCollection();
+        $this->commentHabitats = new ArrayCollection();
+        $this->veterinaryReports = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -59,6 +87,18 @@ class User implements PasswordAuthenticatedUserInterface
     public function getUserIdentifier(): string
     {
         return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
     /**
@@ -117,14 +157,99 @@ class User implements PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getRole(): array
+    public function setRoles(array $roles): static
     {
-        return $this->role;
+        $this->roles = $roles;
+
+        return $this;
     }
 
-    public function setRole(array $role): static
+    /**
+     * @return Collection<int, Food>
+     */
+    public function getFood(): Collection
     {
-        $this->role = $role;
+        return $this->food;
+    }
+
+    public function addFood(Food $food): static
+    {
+        if (!$this->food->contains($food)) {
+            $this->food->add($food);
+            $food->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFood(Food $food): static
+    {
+        if ($this->food->removeElement($food)) {
+            // set the owning side to null (unless already changed)
+            if ($food->getUser() === $this) {
+                $food->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CommentHabitat>
+     */
+    public function getCommentHabitats(): Collection
+    {
+        return $this->commentHabitats;
+    }
+
+    public function addCommentHabitat(CommentHabitat $commentHabitat): static
+    {
+        if (!$this->commentHabitats->contains($commentHabitat)) {
+            $this->commentHabitats->add($commentHabitat);
+            $commentHabitat->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentHabitat(CommentHabitat $commentHabitat): static
+    {
+        if ($this->commentHabitats->removeElement($commentHabitat)) {
+            // set the owning side to null (unless already changed)
+            if ($commentHabitat->getUser() === $this) {
+                $commentHabitat->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, VeterinaryReport>
+     */
+    public function getVeterinaryReports(): Collection
+    {
+        return $this->veterinaryReports;
+    }
+
+    public function addVeterinaryReport(VeterinaryReport $veterinaryReport): static
+    {
+        if (!$this->veterinaryReports->contains($veterinaryReport)) {
+            $this->veterinaryReports->add($veterinaryReport);
+            $veterinaryReport->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVeterinaryReport(VeterinaryReport $veterinaryReport): static
+    {
+        if ($this->veterinaryReports->removeElement($veterinaryReport)) {
+            // set the owning side to null (unless already changed)
+            if ($veterinaryReport->getUser() === $this) {
+                $veterinaryReport->setUser(null);
+            }
+        }
 
         return $this;
     }
