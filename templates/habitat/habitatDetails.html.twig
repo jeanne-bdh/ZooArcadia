@@ -1,23 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Savane{% endblock %}
+{% block title %}{{ habitat.habitatName }}{% endblock %}
 
 {% block body %}
 <!-- SECTION : HERO -->
 <section class="hero d-flex justify-content-center align-items-center">
-    <h1>SAVANE</h1>
+    <h1>{{ habitat.habitatName }}</h1>
 </section>
 
-<!-- SECTION : SAVANE -->
+<!-- SECTION : HABITAT DETAILS -->
 <section class="container">
     <p class="text-dark text-center m-4 p-md-4">
-        La savane est un vaste paysage ouvert, caractérisé par des prairies herbeuses parsemées d'arbres et de buissons
-        épars. <br>
-        Elle est l'un des habitats les plus riches en biodiversité animale, et elle abrite certaines des espèces
-        les plus emblématiques de la planète : <br>
-        herbivores, prédateurs, carnivores, oiseaux, insectes ou encore reptiles.<br>
-        La savane est donc un écosystème dynamique où la compétition pour la survie est rude. La coexistence entre ces
-        animaux forme un équilibre écologique complexe et fascinant.
+        {{ habitat.habitatDescription|raw }}
     </p>
     <div class="row mb-5 mx-3">
         <img class="col-12 col-md-4 rounded-5" src="/assets/images/savane/savane-3.jpg" alt="Savane coucher de soleil">
