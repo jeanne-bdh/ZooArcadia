@@ -45,8 +45,10 @@ class DashboardController extends AbstractDashboardController
 
     public function configureDashboard(): Dashboard
     {
+        $home = $this->generateUrl('app_home');
+        
         return Dashboard::new()
-            ->setTitle('Zoo Arcadia');
+            ->setTitle('<a href="' . $home . '">Zoo Arcadia</a>');
     }
 
     public function configureMenuItems(): iterable

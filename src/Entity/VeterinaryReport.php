@@ -39,7 +39,7 @@ class VeterinaryReport
 
     #[ORM\ManyToOne(inversedBy: 'veterinaryReports')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?foodType $foodType = null;
+    private ?FoodType $foodType = null;
 
     public function getId(): ?int
     {
@@ -130,12 +130,12 @@ class VeterinaryReport
         return $this;
     }
 
-    public function getFoodType(): ?foodType
+    public function getFoodType(): ?FoodType
     {
         return $this->foodType;
     }
 
-    public function setFoodType(?foodType $foodType): static
+    public function setFoodType(?FoodType $foodType): static
     {
         $this->foodType = $foodType;
 

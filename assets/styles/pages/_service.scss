@@ -1,20 +1,24 @@
+/*
 .img-services {
     width: 150px;
+    height: auto;
+    object-fit: contain;
 }
+    */
 
 @media (min-width: 992px) {
     .article-services {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        flex-shrink: 0;
     }
 
-    .guided-tour {
-        display: flex;
-        flex-direction: row-reverse;
-    }
-
+    /*
     .img-services {
         width: 200px;
+        height: auto;
+        object-fit: contain;
     }
+        */
 }

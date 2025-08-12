@@ -17,25 +17,33 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ms-auto text-end">
 					<li class="nav-item">
-						<a class="nav-link text-light mx-2 fs-5" href="{{ path('app_home') }}">Accueil</a>
+						<a class="nav-link text-light mx-2 fs-6" href="{{ path('app_home') }}">Accueil</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-light mx-2 fs-5" href="{{ path('app_service') }}">Nos services</a>
+						<a class="nav-link text-light mx-2 fs-6" href="{{ path('app_service') }}">Nos services</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-light mx-2 fs-5" href="{{ path('app_habitat') }}">Nos habitats</a>
+						<a class="nav-link text-light mx-2 fs-6" href="{{ path('app_habitat') }}">Nos habitats</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link text-light mx-2 fs-5" href="/contact">Contact</a>
+						<a class="nav-link text-light mx-2 fs-6" href="/contact">Contact</a>
 					</li>
 					<li class="nav-item" data-show="connected">
-						<button class="btn btn-light mx-lg-3 fs-5" id="btn-logout">Déconnexion</button>
-					</li>
-					<li class="nav-item" data-show="disconnected">
-						<a class="btn btn-outline-light mx-lg-3 fs-5" href="/login" id="btn-login">Connexion</a>
+						{% if app.user %}
+							<a href="{{ path('admin') }}">Bonjour {{ app.user.firstName }}</a>
+							<a href="{{ path('app_logout') }}">
+								<button class="btn btn-light mx-lg-3 fs-6" id="btn-logout">Déconnexion</button>
+							</a>
+						{% else %}
+							<li class="nav-item" data-show="disconnected">
+								<a href="{{ path('app_login') }}">
+									<button class="btn btn-outline-light mx-lg-3 fs-6" href="/login" id="btn-login">Connexion</button>
+								</a>
+							</li>
+						{% endif %}
 					</li>
 				</ul>
-			</div>
+			</li>
 		</div>
-	</nav>
-</header>
+	</div>
+</nav></header>

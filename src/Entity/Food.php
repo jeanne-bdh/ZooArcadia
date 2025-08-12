@@ -25,11 +25,11 @@ class Food
 
     #[ORM\ManyToOne(inversedBy: 'food')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?foodType $foodType = null;
+    private ?FoodType $foodType = null;
 
     #[ORM\ManyToOne(inversedBy: 'food')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?animal $animal = null;
+    private ?Animal $animal = null;
 
     #[ORM\ManyToOne(inversedBy: 'food')]
     #[ORM\JoinColumn(nullable: false)]
@@ -76,24 +76,24 @@ class Food
         return $this;
     }
 
-    public function getFoodType(): ?foodType
+    public function getFoodType(): ?FoodType
     {
         return $this->foodType;
     }
 
-    public function setFoodType(?foodType $foodType): static
+    public function setFoodType(?FoodType $foodType): static
     {
         $this->foodType = $foodType;
 
         return $this;
     }
 
-    public function getAnimal(): ?animal
+    public function getAnimal(): ?Animal
     {
         return $this->animal;
     }
 
-    public function setAnimal(?animal $animal): static
+    public function setAnimal(?Animal $animal): static
     {
         $this->animal = $animal;
 
