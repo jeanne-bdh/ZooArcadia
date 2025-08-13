@@ -49,6 +49,11 @@ class Habitat
     #[ORM\OneToMany(targetEntity: CommentHabitat::class, mappedBy: 'habitat')]
     private Collection $commentHabitats;
 
+    public function __toString()
+    {
+        return $this->getHabitatName();
+    }
+
     public function __construct()
     {
         $this->animals = new ArrayCollection();

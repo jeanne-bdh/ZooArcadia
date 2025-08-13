@@ -21,8 +21,13 @@ class Breed
     /**
      * @var Collection<int, Animal>
      */
-    #[ORM\ManyToMany(targetEntity: Animal::class, mappedBy: 'breed')]
+    #[ORM\OneToMany(targetEntity: Animal::class, mappedBy: 'breed')]
     private Collection $animals;
+
+    public function __toString()
+    {
+        return $this->getBreedName();
+    }
 
     public function __construct()
     {
@@ -58,7 +63,7 @@ class Breed
     {
         if (!$this->animals->contains($animal)) {
             $this->animals->add($animal);
-            $animal->addBreed($this);
+            $animal->setBreed($this);
         }
 
         return $this;
@@ -66,10 +71,9 @@ class Breed
 
     public function removeAnimal(Animal $animal): static
     {
-        if ($this->animals->removeElement($animal)) {
-            $animal->removeBreed($this);
+        if ($this->animals->removeElement($animal) && ($animal->getBreed() === $this)) {
+                $animal->setBreed(null);
         }
-
         return $this;
     }
 }

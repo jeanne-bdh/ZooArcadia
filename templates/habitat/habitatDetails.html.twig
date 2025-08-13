@@ -10,15 +10,13 @@
 
 <!-- SECTION : HABITAT DETAILS -->
 <section class="container">
-    <p class="text-dark text-center m-4 p-md-4">
+    <div class="text-dark text-center m-4 p-md-4">
         {{ habitat.habitatDescription|raw }}
-    </p>
-    <div class="row mb-5 mx-3">
-        <img class="col-12 col-md-4 rounded-5" src="/assets/images/savane/savane-3.jpg" alt="Savane coucher de soleil">
-        <img class="col-12 col-md-4 my-5 my-md-0 rounded-5" src="/assets/images/savane/savane-1.jpg" alt="Savane hautes herbes">
-        <img class="col-12 col-md-4 rounded-5" src="/assets/images/savane/savane-2.jpg" alt="Savane arbres">
     </div>
-    <p class="fs-2 ms-3">Nos animaux de la savane :</p>
+    <div class="row my-5 mx-3">
+        <img class="col rounded-5" src="{{ vich_uploader_asset(habitat, 'imageFile') }}" alt="{{ habitat.habitatName }}">
+    </div>
+    <p class="fs-2 ms-3">Nos animaux :</p>
     <div class="row mx-4 mb-5 g-5">
         <div class="col-12 col-md-6 col-lg-4">
             <a href="#"><img class="img-animal object-fit-cover rounded-circle" src="/assets/images/savane/animals-savane/babouin.jpg" alt="Babouins"></a>

@@ -18,4 +18,14 @@ final class HabitatController extends AbstractController
             'habitats' => $habitats
         ]);
     }
+
+    #[Route('/habitatDetails/{id}', name: 'app_habitat_details')]
+    public function detail(int $id, HabitatRepository $habitatRepository): Response
+    {
+        $habitat = $habitatRepository->find($id);
+
+        return $this->render('habitat/habitatDetails.html.twig', [
+            'habitat' => $habitat
+        ]);
+    }
 }

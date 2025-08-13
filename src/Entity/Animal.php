@@ -7,8 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: AnimalRepository::class)]
+#[Vich\Uploadable]
 class Animal
 {
     #[ORM\Id]
@@ -28,11 +31,9 @@ class Animal
     #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'Animal', orphanRemoval: true)]
     private Collection $food;
 
-    /**
-     * @var Collection<int, Breed>
-     */
-    #[ORM\ManyToMany(targetEntity: Breed::class, inversedBy: 'Animals')]
-    private Collection $breed;
+    #[ORM\ManyToOne(targetEntity: Breed::class, inversedBy: 'Animals')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Breed $breed = null;
 
     #[ORM\ManyToOne(inversedBy: 'Animals')]
     #[ORM\JoinColumn(nullable: false)]
@@ -50,10 +51,21 @@ class Animal
     #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'Animal')]
     private Collection $veterinaryReports;
 
+    #[Vich\UploadableField(mapping: 'service', fileNameProperty: 'imageName', size: 'imageSize')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $imageName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $imageSize = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
     public function __construct()
     {
         $this->food = new ArrayCollection();
-        $this->breed = new ArrayCollection();
         $this->consultations = new ArrayCollection();
         $this->veterinaryReports = new ArrayCollection();
     }
@@ -115,26 +127,14 @@ class Animal
         return $this;
     }
 
-    /**
-     * @return Collection<int, Breed>
-     */
-    public function getBreed(): Collection
+    public function getBreed(): ?Breed
     {
         return $this->breed;
     }
 
-    public function addBreed(Breed $breed): static
+    public function setBreed(?Breed $breed): static
     {
-        if (!$this->breed->contains($breed)) {
-            $this->breed->add($breed);
-        }
-
-        return $this;
-    }
-
-    public function removeBreed(Breed $breed): static
-    {
-        $this->breed->removeElement($breed);
+        $this->breed = $breed;
 
         return $this;
     }
@@ -205,5 +205,50 @@ class Animal
             }
 
         return $this;
+    }
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
+    public function setImageSize(?int $imageSize): void
+    {
+        $this->imageSize = $imageSize;
+    }
+
+    public function getImageSize(): ?int
+    {
+        return $this->imageSize;
     }
 }
