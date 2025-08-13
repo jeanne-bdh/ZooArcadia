@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Habitat;
+namespace App\Controller;
 
 use App\Repository\HabitatRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

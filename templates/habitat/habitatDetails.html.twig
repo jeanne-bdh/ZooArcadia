@@ -23,9 +23,9 @@
 			{% for animal in habitat.animals %}
 				<div class="col-12 col-md-6 col-lg-4">
 					<a href="{{ path('app_animal', {'id': animal.id}) }}">
-						<img class="img-animal object-fit-cover rounded-circle" src="{{ vich_uploader_asset(animal, 'imageFile') }}" alt="{{ animal.breed ? animal.breed.breedName : 'Inconnue' }}">
+						<img class="img-animal object-fit-cover rounded-circle" src="{{ vich_uploader_asset(animal, 'imageFile') }}" alt="{{ animal.breed }}">
 					</a>
-					<a class="fs-4 ms-2" href="{{ path('app_animal', {'id': animal.id}) }}">{{ animal.breed ? animal.breed.breedName : 'Inconnue' }}</a>
+					<a class="fs-4 ms-2" href="{{ path('app_animal', {'id': animal.id}) }}">{{ animal.breed }}</a>
 				</div>
 			{% endfor %}
 		</div>
