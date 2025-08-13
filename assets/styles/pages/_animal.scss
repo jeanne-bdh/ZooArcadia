@@ -1,0 +1,15 @@
+.img-animal {
+    width: 85px;
+    height: 85px;
+
+    @media (min-width: 768px) {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.animal-criteria {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $black;
+}

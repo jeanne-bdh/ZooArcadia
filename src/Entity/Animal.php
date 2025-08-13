@@ -51,7 +51,7 @@ class Animal
     #[ORM\OneToMany(targetEntity: VeterinaryReport::class, mappedBy: 'Animal')]
     private Collection $veterinaryReports;
 
-    #[Vich\UploadableField(mapping: 'service', fileNameProperty: 'imageName', size: 'imageSize')]
+    #[Vich\UploadableField(mapping: 'animal', fileNameProperty: 'imageName', size: 'imageSize')]
     private ?File $imageFile = null;
 
     #[ORM\Column(nullable: true)]
