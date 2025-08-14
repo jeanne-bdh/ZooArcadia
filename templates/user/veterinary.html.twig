@@ -1,7 +1,9 @@
-{% extends '@EasyAdmin/page/content.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block content_title %}Espace personnel Vétérinaire{% endblock %}
+{% block title %}Espace Vétérinaire{% endblock %}
 
-{% block main %}
-    <h2>Bienvenue {{ app.user.firstName }} !</h2>
+{% block body %}
+	<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'Espace Vétérinaire' } %}
+
 {% endblock %}

@@ -25,6 +25,7 @@ security:
                 enable_csrf: true
                 username_parameter: email
                 password_parameter: _password
+                success_handler: App\Security\LoginSuccessHandler
             logout:
                 path: app_logout
                 # where to redirect after logout
