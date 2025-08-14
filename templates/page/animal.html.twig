@@ -6,9 +6,7 @@
 
 {% block body %}
 	<!-- SECTION : HERO -->
-	<section class="hero d-flex justify-content-center align-items-center">
-		<h1>{{ animal.breed }}</h1>
-	</section>
+	{% include 'partials/_hero.html.twig' with { title: animal.breed } %}
 
 	<!-- SECTION : ANIMAL -->
 	<section class="container">

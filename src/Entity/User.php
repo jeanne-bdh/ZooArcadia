@@ -184,11 +184,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function removeFood(Food $food): static
     {
-        if ($this->food->removeElement($food)) {
+        if ($this->food->removeElement($food) && ($food->getUser() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($food->getUser() === $this) {
                 $food->setUser(null);
-            }
         }
 
         return $this;
@@ -214,12 +212,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function removeCommentHabitat(CommentHabitat $commentHabitat): static
     {
-        if ($this->commentHabitats->removeElement($commentHabitat)) {
+        if ($this->commentHabitats->removeElement($commentHabitat) && ($commentHabitat->getUser() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($commentHabitat->getUser() === $this) {
                 $commentHabitat->setUser(null);
             }
-        }
 
         return $this;
     }
@@ -244,11 +240,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function removeVeterinaryReport(VeterinaryReport $veterinaryReport): static
     {
-        if ($this->veterinaryReports->removeElement($veterinaryReport)) {
+        if ($this->veterinaryReports->removeElement($veterinaryReport) && ($veterinaryReport->getUser() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($veterinaryReport->getUser() === $this) {
                 $veterinaryReport->setUser(null);
-            }
         }
 
         return $this;

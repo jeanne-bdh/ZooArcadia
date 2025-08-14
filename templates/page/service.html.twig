@@ -5,9 +5,7 @@
 
 {% block body %}
 	<!-- SECTION : HERO -->
-	<section class="hero d-flex justify-content-center align-items-center">
-		<h1>NOS SERVICES</h1>
-	</section>
+	{% include 'partials/_hero.html.twig' with { title: 'NOS SERVICES' } %}
 
 	<!-- SECTION : SERVICES -->
 	<section class="container-back bg-light p-5 mx-auto">
