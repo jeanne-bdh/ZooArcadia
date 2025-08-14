@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nourrir les animaux
+{% endblock %}
+
+{% block body %}
+
+	<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'Saisie de la consommation de nourriture' } %}
+
+	<!-- SECTION : INPUT FOOD CONSO -->
+	<section class="container">
+		<form class="row m-3 m-md-5">
+			<div class="col-12 col-md-6 col-lg-4 mb-3">
+				<label for="animalSelect" class="form-label">Animal</label>
+				<select class="form-select" aria-label="Sélection animal" id="animalSelect" required>
+					<option value="" selected>-- Sélectionner un animal --</option>
+					{% for breed in breeds %}
+						<option value="{{ breed.id }}">{{ breed.breedName }}</option>
+					{% endfor %}
+				</select>
+				<div class="invalid-feedback">
+					Veuillez sélectionner un animal
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 mb-3">
+				<label for="nameSelect" class="form-label">Prénom</label>
+				<select class="form-select" aria-label="Sélection Prénom" id="nameSelect" required>
+					<option value="" selected>-- Sélectionner le prénom --</option>
+					{% for animal in animals %}
+						<option value="{{ animal.id }}">{{ animal.animalName }}</option>
+					{% endfor %}
+				</select>
+				<div class="invalid-feedback">
+					Veuillez sélectionner un prénom
+				</div>
+			</div>
+			<div class="col-12 col-md-6 col-lg-4 mb-3">
+				<label for="dateFood" class="form-label">Date</label>
+				<input type="date" class="form-control" id="dateFood" required></input>
+			<div class="invalid-feedback">
+				Veuillez entrer une date valide
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			<label for="hourFood" class="form-label">Heure</label>
+			<input type="time" class="form-control" id="hourFood" required></input>
+		<div class="invalid-feedback">
+			Veuillez entrer une heure
+		</div>
+	</div>
+	<div class="col-12 col-md-6 col-lg-4 mb-3">
+		<label for="foodSelect" class="form-label">Nourriture</label>
+		<select class="form-select" aria-label="Sélection nourriture" id="foodSelect" required>
+			<option value="" selected>-- Sélectionner la nourriture --</option>
+			{% for foodType in foodTypes %}
+						<option value="{{ foodType.id }}">{{ foodType.foodType }}</option>
+					{% endfor %}
+		</select>
+		<div class="invalid-feedback">
+			Veuillez sélectionner une nourriture
+		</div>
+	</div>
+	<div class="col-12 col-md-6 col-lg-4 mb-3">
+		<label for="quantity" class="form-label">Quantité (g)</label>
+		<input type="number" class="form-control" id="quantity" placeholder="0" required></input>
+	<div class="invalid-feedback">
+		Veuillez entrer une quantité valide
+	</div>
+</div>
+<div class="text-center">
+	<button type="submit" class="btn btn-black mt-3" id="btn-food-conso">Soumettre</button>
+</div></form></section><!-- SECTION : FOOD CONSO LIST --><section class="table-responsive my-5 mx-md-5"><table class="table table-striped table-hover">
+<thead>
+	<tr>
+		<th scope="col">Animal</th>
+		<th scope="col">Prénom</th>
+		<th scope="col">Date</th>
+		<th scope="col">Heure</th>
+		<th scope="col">Nourriture</th>
+		<th scope="col">Quantité (g)</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>Lion</td>
+		<td>Claude</td>
+		<td>02/06/2025</td>
+		<td>10:30</td>
+		<td>Viande</td>
+		<td>500</td>
+	</tr>
+	<tr>
+		<td>Zèbre</td>
+		<td>Ray</td>
+		<td>03/06/2025</td>
+		<td>14:15</td>
+		<td>Herbes</td>
+		<td>300</td>
+	</tr>
+	<tr>
+		<td>Crocodile</td>
+		<td>Gaby</td>
+		<td>04/06/2025</td>
+		<td>15:30</td>
+		<td>Poissons</td>
+		<td>500</td>
+	</tr>
+	<tr>
+		<td>Zèbre</td>
+		<td>Ray</td>
+		<td>05/06/2025</td>
+		<td>18:30</td>
+		<td>Herbes</td>
+		<td>350</td>
+	</tr>
+</tbody></table></section>{% endblock %}

@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Controller\User;
+namespace App\Controller\Employee;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class EmployeeController extends AbstractController
+class ReviewValidationController extends AbstractController
 {
-    #[Route('/employee', name: 'app_employee')]
+    #[Route('/reviewValidation', name: 'app_review_validation')]
     public function index(): Response
     {
         $user = $this->getUser();
 
-        return $this->render('user/employee.html.twig', [
+        return $this->render('employee/reviewValidation.html.twig', [
             'user' => $user
         ]);
     }

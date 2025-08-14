@@ -9,3 +9,8 @@ when@test:
     framework:
         validation:
             not_compromised_password: false
+            auto_mapping:
+            # an empty array means that all entities that belong to that
+            # namespace will add automatic validation
+            'App\Entity\': []
+            'Foo\': ['Foo\Some\Entity', 'Foo\Another\Entity']
