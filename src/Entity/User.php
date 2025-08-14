@@ -9,6 +9,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\Validator\Constraints as SecurityAssert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
@@ -20,21 +22,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Assert\Email(message: "Veuillez entrer une adresse e-mail valide")]
     private ?string $email = null;
 
     /**
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[SecurityAssert\UserPassword(message: "Le mot de passe doit contenir au moins 8 caractères comprenant une lettre majuscule, une minuscule, un chiffre et un caractère spécial")]
     private ?string $password = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message: "Veuillez entrer un nom")]
     private ?string $lastname = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank(message: "Veuillez entrer un prénom")]
     private ?string $firstname = null;
 
     #[ORM\Column(name : "roles", type: Types::JSON)]
+    #[Assert\Choice(
+        choices:['ROLE_EMPLOYEE', 'ROLE_VETERINARY'],
+        message: "Veuillez choisir un rôle")]
     private array $roles = [];
 
     /**
@@ -42,12 +51,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\OneToMany(targetEntity: Food::class, mappedBy: 'user', orphanRemoval: true)]
     private Collection $food;
-
-    /**
-     * @var Collection<int, CommentHabitat>
-     */
-    #[ORM\OneToMany(targetEntity: CommentHabitat::class, mappedBy: 'user')]
-    private Collection $commentHabitats;
 
     /**
      * @var Collection<int, VeterinaryReport>
@@ -58,7 +61,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->food = new ArrayCollection();
-        $this->commentHabitats = new ArrayCollection();
         $this->veterinaryReports = new ArrayCollection();
     }
 
@@ -188,34 +190,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
                 $food->setUser(null);
         }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, CommentHabitat>
-     */
-    public function getCommentHabitats(): Collection
-    {
-        return $this->commentHabitats;
-    }
-
-    public function addCommentHabitat(CommentHabitat $commentHabitat): static
-    {
-        if (!$this->commentHabitats->contains($commentHabitat)) {
-            $this->commentHabitats->add($commentHabitat);
-            $commentHabitat->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCommentHabitat(CommentHabitat $commentHabitat): static
-    {
-        if ($this->commentHabitats->removeElement($commentHabitat) && ($commentHabitat->getUser() === $this)) {
-            // set the owning side to null (unless already changed)
-                $commentHabitat->setUser(null);
-            }
 
         return $this;
     }

@@ -26,6 +26,9 @@ class Review
     #[ORM\Column]
     private ?bool $statusValidation = null;
 
+    #[ORM\Column(type: Types::SMALLINT)]
+    private ?int $rate = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +78,18 @@ class Review
     public function setStatusValidation(bool $statusValidation): static
     {
         $this->statusValidation = $statusValidation;
+
+        return $this;
+    }
+
+    public function getRate(): ?int
+    {
+        return $this->rate;
+    }
+
+    public function setRate(int $rate): static
+    {
+        $this->rate = $rate;
 
         return $this;
     }

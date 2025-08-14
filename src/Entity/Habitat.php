@@ -43,11 +43,6 @@ class Habitat
     #[ORM\OneToMany(targetEntity: Animal::class, mappedBy: 'habitat', orphanRemoval: true)]
     private Collection $animals;
 
-    /**
-     * @var Collection<int, CommentHabitat>
-     */
-    #[ORM\OneToMany(targetEntity: CommentHabitat::class, mappedBy: 'habitat')]
-    private Collection $commentHabitats;
 
     public function __toString()
     {
@@ -57,7 +52,6 @@ class Habitat
     public function __construct()
     {
         $this->animals = new ArrayCollection();
-        $this->commentHabitats = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -112,34 +106,6 @@ class Habitat
         if ($this->animals->removeElement($animal) && ($animal->getHabitat() === $this)) {
             // set the owning side to null (unless already changed)
                 $animal->setHabitat(null);
-            }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, CommentHabitat>
-     */
-    public function getCommentHabitats(): Collection
-    {
-        return $this->commentHabitats;
-    }
-
-    public function addCommentHabitat(CommentHabitat $commentHabitat): static
-    {
-        if (!$this->commentHabitats->contains($commentHabitat)) {
-            $this->commentHabitats->add($commentHabitat);
-            $commentHabitat->setHabitat($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCommentHabitat(CommentHabitat $commentHabitat): static
-    {
-        if ($this->commentHabitats->removeElement($commentHabitat) && ($commentHabitat->getHabitat() === $this)) {
-            // set the owning side to null (unless already changed)
-                $commentHabitat->setHabitat(null);
             }
 
         return $this;
