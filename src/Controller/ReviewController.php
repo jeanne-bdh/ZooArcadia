@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Review;
 use App\Form\ReviewType;
 use Doctrine\ORM\EntityManagerInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,14 +17,6 @@ final class ReviewController extends AbstractController
     {
         $review = new Review();
         $review->setDatePublication(new \DateTime());
-        
-        ChoiceField::new('rate', 'Note')->setChoices([
-            '1' => '1',
-            '2' => '2',
-            '3' => '3',
-            '4' => '4',
-            '5' => '5',
-        ])->renderExpanded();
         
         $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);

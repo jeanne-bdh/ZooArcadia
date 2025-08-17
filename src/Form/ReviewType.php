@@ -18,10 +18,8 @@ class ReviewType extends AbstractType
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo :',
                 'label_attr' => ['class' => 'form-label'],
-                'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'pseudo'
-                ]
+                'attr' => ['class' => 'form-control'],
+                'placeholder' => 'pseudo',
             ])
             ->add('rate', ChoiceType::class, [
                 'label' => 'Votre note :',
@@ -32,9 +30,7 @@ class ReviewType extends AbstractType
                     '2' => 2,
                     '1' => 1,
                 ],
-                'attr' => [
-                    'class' => 'rate'
-                ],
+                'attr' => ['class' => 'rate'],
                 'expanded' => true,
                 'multiple' => false,
             ])
@@ -43,9 +39,9 @@ class ReviewType extends AbstractType
                 'label_attr' => ['class' => 'form-label'],
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Racontez-nous votre expérience',
                     'rows' => 4
-                ]
+                ],
+                'placeholder' => 'Racontez-nous votre expérience',
             ])
         ;
     }

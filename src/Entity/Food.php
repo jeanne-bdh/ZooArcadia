@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\FoodRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: FoodRepository::class)]
 class Food
@@ -15,20 +16,25 @@ class Food
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\LessThanOrEqual("today", message: "La date ne peut pas être plus tard qu'aujourd'hui")]
     private ?\DateTime $dateFood = null;
 
     #[ORM\Column(type: Types::TIME_MUTABLE)]
+    #[Assert\NotBlank(message: "Veuillez saisir une heure")]
     private ?\DateTime $time = null;
 
     #[ORM\Column]
+    #[Assert\PositiveOrZero(message: "La quantité ne peut pas être négative")]
     private ?int $quantity = null;
 
     #[ORM\ManyToOne(inversedBy: 'food')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotBlank(message: "Veuillez sélectionner la nourriture")]
     private ?FoodType $foodType = null;
 
     #[ORM\ManyToOne(inversedBy: 'food')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotBlank(message: "Veuillez sélectionner un animal")]
     private ?Animal $animal = null;
 
     #[ORM\ManyToOne(inversedBy: 'food')]

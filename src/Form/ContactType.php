@@ -21,7 +21,8 @@ class ContactType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Sujet'
-                ]
+                ],
+                'required' => true
             ])
             ->add('email', EmailType::class, [
                 'label' => 'Email :',
@@ -29,7 +30,8 @@ class ContactType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'votre-email@mail.com'
-                ]
+                ],
+                'required' => true
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Message :',
@@ -38,7 +40,8 @@ class ContactType extends AbstractType
                     'class' => 'form-control',
                     'placeholder' => 'Bonjour...',
                     'rows' => 4
-                ]
+                ],
+                'required' => true
             ]);
     }
 

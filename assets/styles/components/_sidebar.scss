@@ -1,10 +1,14 @@
 .sidebar {
-    height: 100vh;
+    width: auto;
+    max-width: 300px;
+
+    i {
+        font-size: 1.5rem;
+        color: $black;
+        margin-right: 0.5rem;
+    }
 }
 
-.icon-sidebar{
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: $black;
-    margin-right: 0.5rem;
+.offcanvas {
+  width: 250px; // pour garder la même largeur que la sidebar desktop
 }
