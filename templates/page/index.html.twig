@@ -43,15 +43,15 @@
 				<hr class="line-h2">
 			</div>
 			{% for habitat in habitats  %}
-			<div class="d-flex flex-column align-items-center">
-				<a class="img-habitat-home d-flex justify-content-center" href="{{ path('app_habitat_details', {'id': habitat.id}) }}">
-					<img class="w-75" src="{{ vich_uploader_asset(habitat, 'imageFile') }}" alt="{{ habitat.habitatName }}">
-					<p class="view-habitat">Visitez</p>
-				</a>
-				<a href="{{ path('app_habitat_details', {'id': habitat.id}) }}">
-					<h4 class="text-black mt-1 mb-4">{{ habitat.habitatName }}</h4>
-				</a>
-			</div>
+				<div class="d-flex flex-column align-items-center">
+					<a class="img-habitat-home d-flex justify-content-center" href="{{ path('app_habitat_details', {'id': habitat.id}) }}">
+						<img class="w-75" src="{{ vich_uploader_asset(habitat, 'imageFile') }}" alt="{{ habitat.habitatName }}">
+						<p class="view-habitat">Visitez</p>
+					</a>
+					<a href="{{ path('app_habitat_details', {'id': habitat.id}) }}">
+						<h4 class="text-black mt-1 mb-4">{{ habitat.habitatName }}</h4>
+					</a>
+				</div>
 			{% endfor %}
 		</div>
 	</section>
@@ -126,33 +126,13 @@
 			</div>
 			<div id="carouselHome" class="carousel slide">
 				<div class="carousel-inner rounded-5">
-					<div class="carousel-item active">
-						<img src="{{ asset('images/home/carousel/capybara.jpg') }}" alt="Capybara">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/crocodile.jpg') }}" alt="Crocodile">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/iguane.jpg') }}" alt="Iguane">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/lion.jpg') }}" alt="Lion">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/rhinoceros.jpg') }}" alt="Rhinocéros">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/serpent.jpg') }}" alt="Serpent">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/tigre.jpg') }}" alt="Tigre">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/tortue.jpg') }}" alt="Tortue">
-					</div>
-					<div class="carousel-item">
-						<img src="{{ asset('images/home/carousel/zebre.jpg') }}" alt="Zèbre">
-					</div>
+
+					{% for animal in animals %}
+						<div class="carousel-item {% if loop.first %}active{% endif %}">
+							<img src="{{ vich_uploader_asset(animal, 'imageFile') }}" alt="{{ animal.animalName }}">
+						</div>
+					{% endfor %}
+
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -181,7 +161,7 @@
 						<i class="bi bi-star-fill"></i>
 					</div>
 					<p class="text-white">“Très très agréable comme zoo nous étions étonné que ce zoo soit aussi propre.
-						                    Superbe découverte.”
+												                    Superbe découverte.”
 					</p>
 				</div>
 				<div class="col-6 col-md-3 d-none d-md-block">
@@ -194,9 +174,9 @@
 						<i class="bi bi-star-fill"></i>
 					</div>
 					<p class="text-white">“Je suis allé dans ce zoo avec un enfant en bas âge en pensant y passer un bon
-						                    moment. En réalité,
-						                    j’y ai
-						                    pensé un excellent moment !”</p>
+												                    moment. En réalité,
+												                    j’y ai
+												                    pensé un excellent moment !”</p>
 				</div>
 				<div class="col-6 col-md-3 d-none d-md-block">
 					<h6 class="text-light">Laëtitia S.</h6>
@@ -208,9 +188,9 @@
 						<i class="bi bi-star-fill"></i>
 					</div>
 					<p class="text-white">“Les explications du soigneur et de notre guide se sont révélées très utiles.
-						                    L'activité est très
-						                    bien
-						                    organisée. Je recommande.”</p>
+												                    L'activité est très
+												                    bien
+												                    organisée. Je recommande.”</p>
 				</div>
 				<div class="link-form-review col-6 col-md-3 d-flex flex-column justify-content-evenly">
 					<a href="/form-review">

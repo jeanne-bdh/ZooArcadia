@@ -12,7 +12,9 @@
 	<section class="container">
 		<h2 class="text-center my-4 my-md-5">{{ animal.animalName }}</h2>
 		<div class="row mb-5">
-			<img class="col-12 col-md-6 w-50 rounded-5 mx-auto mx-md-0" src="{{ vich_uploader_asset(animal, 'imageFile') }}" alt="{{ animal.breed }}">
+			<div class="col-12 col-md-6">
+				<img class="rounded-5 img-fluid" src="{{ vich_uploader_asset(animal, 'imageFile') }}" alt="{{ animal.breed }}">
+			</div>
 			<div class="col-12 col-md-6 d-flex flex-column justify-content-center ps-5 mt-4 mt-md-0">
 				<div class="d-flex">
 					<p class="animal-criteria">Espèce :</p>

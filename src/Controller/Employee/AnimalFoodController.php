@@ -2,7 +2,6 @@
 
 namespace App\Controller\Employee;
 
-use App\Entity\FoodType;
 use App\Repository\AnimalRepository;
 use App\Repository\BreedRepository;
 use App\Repository\FoodTypeRepository;
