@@ -31,6 +31,15 @@ class Service
     #[ORM\Column(nullable: true)]
     private ?int $imageSize = null;
 
+    #[Vich\UploadableField(mapping: 'service', fileNameProperty: 'iconName', size: 'iconSize')]
+    private ?File $iconFile = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?string $iconName = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?int $iconSize = null;
+
     #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
 
@@ -71,6 +80,7 @@ class Service
      * during Doctrine hydration.
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $iconFile
      */
     public function setImageFile(?File $imageFile = null): void
     {
@@ -106,5 +116,41 @@ class Service
     public function getImageSize(): ?int
     {
         return $this->imageSize;
+    }
+
+    public function setIconFile(?File $iconFile = null): void
+    {
+        $this->iconFile = $iconFile;
+
+        if (null !== $iconFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getIconFile(): ?File
+    {
+        return $this->iconFile;
+    }
+
+    public function setIconName(?string $iconName): void
+    {
+        $this->iconName = $iconName;
+    }
+
+    public function getIconName(): ?string
+    {
+        return $this->iconName;
+    }
+
+    public function setIconSize(?int $iconSize): void
+    {
+        $this->iconSize = $iconSize;
+    }
+
+    public function getIconSize(): ?int
+    {
+        return $this->iconSize;
     }
 }
