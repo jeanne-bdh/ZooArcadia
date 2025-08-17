@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comptes rendus vétérinaires{% endblock %}
+
+{% block body %}
+
+<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'Saisie des comptes rendus vétérinaires' } %}
+
+	<!-- SECTION : INPUT FOOD CONSO -->
+	<section class="container">
+
+		{{ form_start(form, { 'attr': { 'class': 'row g-3 m-md-5' } }) }}
+
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.breed) }}
+			{{ form_widget(form.breed) }}
+			{{ form_errors(form.breed) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.animal) }}
+			{{ form_widget(form.animal) }}
+			{{ form_errors(form.animal) }}
+		</div>
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.state) }}
+			{{ form_widget(form.state) }}
+			{{ form_errors(form.state) }}
+		</div>
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.foodType) }}
+			{{ form_widget(form.foodType) }}
+			{{ form_errors(form.foodType) }}
+		</div>
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.quantity) }}
+			{{ form_widget(form.quantity) }}
+			{{ form_errors(form.quantity) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.datePassage) }}
+			{{ form_widget(form.datePassage) }}
+			{{ form_errors(form.datePassage) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.observation) }}
+			{{ form_widget(form.observation) }}
+			{{ form_errors(form.observation) }}
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-black mt-3" id="btn-food-conso">Soumettre</button>
+		</div>
+
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+		{{ form_end(form) }}
+	</section>
+
+	<!-- SECTION : VETERINARY REPORT LIST -->
+	{% include 'partials/_veterinaryReportDashboard.html.twig' %}
+
+{% endblock %}

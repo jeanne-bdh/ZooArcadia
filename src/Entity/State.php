@@ -66,12 +66,10 @@ class State
 
     public function removeVeterinaryReport(VeterinaryReport $veterinaryReport): static
     {
-        if ($this->veterinaryReports->removeElement($veterinaryReport)) {
+        if ($this->veterinaryReports->removeElement($veterinaryReport) && ($veterinaryReport->getState() === $this)) {
             // set the owning side to null (unless already changed)
-            if ($veterinaryReport->getState() === $this) {
                 $veterinaryReport->setState(null);
             }
-        }
 
         return $this;
     }

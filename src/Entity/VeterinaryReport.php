@@ -18,9 +18,6 @@ class VeterinaryReport
     private ?\DateTime $datePassage = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $detailAnimal = null;
-
-    #[ORM\Column(type: Types::TEXT)]
     private ?string $observation = null;
 
     #[ORM\Column]
@@ -54,18 +51,6 @@ class VeterinaryReport
     public function setDatePassage(\DateTime $datePassage): static
     {
         $this->datePassage = $datePassage;
-
-        return $this;
-    }
-
-    public function getDetailAnimal(): ?string
-    {
-        return $this->detailAnimal;
-    }
-
-    public function setDetailAnimal(string $detailAnimal): static
-    {
-        $this->detailAnimal = $detailAnimal;
 
         return $this;
     }
