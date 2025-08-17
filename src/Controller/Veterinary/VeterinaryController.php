@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\User;
+namespace App\Controller\Veterinary;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -13,7 +13,7 @@ class VeterinaryController extends AbstractController
     {
         $user = $this->getUser();
 
-        return $this->render('user/veterinary.html.twig', [
+        return $this->render('veterinary/veterinary.html.twig', [
             'user' => $user
         ]);
     }

@@ -1,9 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Espace Vétérinaire{% endblock %}
+{% block title %}Espace Vétérinaire
+{% endblock %}
 
 {% block body %}
 	<!-- SECTION : HERO -->
 	{% include 'partials/_hero.html.twig' with { title: 'Espace Vétérinaire' } %}
+
+	<!-- SECTION : VETERINARY -->
+	<div class="container d-flex flex-row justify-content-evenly m-5">
+		<div class="row">
+			<a href="{{ path('app_review_validation') }}" class="nav-link link-body-emphasis">
+				<i class="bi bi-clipboard2-pulse-fill"></i>
+				Comptes rendus vétérinaires
+			</a>
+		</div>
+		<div class="row">
+			<a href="{{ path('app_animal_food') }}" class="nav-link link-body-emphasis">
+				<i class="bi bi-leaf-fill"></i>
+                Consulter la consommation des animaux
+			</a>
+		</div>
+	</div>
 
 {% endblock %}
