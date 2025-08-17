@@ -28,20 +28,32 @@
 					<li class="nav-item">
 						<a class="nav-link text-light mx-2 fs-6" href="/contact">Contact</a>
 					</li>
-					<li class="nav-item" data-show="connected">
+
+					<li class="nav-item">
 						{% if app.user %}
-							<a href="{{ path('admin') }}">Bonjour {{ app.user.firstName }}</a>
+							{% set roles = app.user.roles %}
+							{% if 'ROLE_ADMIN' in roles %}
+								{% set session_path = path('admin') %}
+							{% elseif 'ROLE_EMPLOYEE' in roles %}
+								{% set session_path = path('app_employee') %}
+							{% elseif 'ROLE_VETERINARY' in roles %}
+								{% set session_path = path('app_veterinary') %}
+							{% endif %}
+
+							<a href="{{ session_path }}">Bonjour
+								{{ app.user.firstName }}</a>
 							<a href="{{ path('app_logout') }}">
 								<button class="btn btn-light mx-lg-3 fs-6" id="btn-logout">Déconnexion</button>
 							</a>
 						{% else %}
-							<li class="nav-item" data-show="disconnected">
+							<li class="nav-item">
 								<a href="{{ path('app_login') }}">
 									<button class="btn btn-outline-light mx-lg-3 fs-6" href="/login" id="btn-login">Connexion</button>
 								</a>
 							</li>
 						{% endif %}
 					</li>
+
 				</ul>
 			</li>
 		</div>

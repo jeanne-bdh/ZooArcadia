@@ -39,3 +39,11 @@
 .nav-link:hover {
     text-decoration: underline;
 }
+
+body {
+    padding-top: 65px;
+}
+
+.navbar {
+    z-index: 10;
+}
