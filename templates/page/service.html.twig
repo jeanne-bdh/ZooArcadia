@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos services
+{% endblock %}
+
+{% block body %}
+	<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'NOS SERVICES' } %}
+
+	<!-- SECTION : SERVICES -->
+	<section class="container-back bg-light p-5 mx-auto">
+		{% for service in services %}
+			<article class="article-services my-5">
+				<div class="me-lg-4">
+					<h2 class="text-center">{{ service.serviceName }}</h2>
+					<p class="text-dark text-center">{{ service.serviceDescription|raw }}</p>
+				</div>
+				<div class="my-auto">
+					<img class="img-services rounded-2 d-block mx-auto" src="{{ vich_uploader_asset(service, 'imageFile') }}" alt="{{ service.serviceName }}">
+				</div>
+			</article>
+		{% endfor %}
+	</section>
+{% endblock %}

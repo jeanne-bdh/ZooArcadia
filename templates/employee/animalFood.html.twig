@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nourrir les animaux
+{% endblock %}
+
+{% block body %}
+
+	<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'Saisie de la consommation de nourriture' } %}
+
+	<!-- SECTION : INPUT FOOD CONSO -->
+	<section class="container">
+
+		{{ form_start(form, { 'attr': { 'class': 'row g-3 m-md-5' } }) }}
+
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.breed) }}
+			{{ form_widget(form.breed) }}
+			{{ form_errors(form.breed) }}
+		</div>
+
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.animal) }}
+			{{ form_widget(form.animal) }}
+			{{ form_errors(form.animal) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.dateFood) }}
+			{{ form_widget(form.dateFood) }}
+			{{ form_errors(form.dateFood) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.time) }}
+			{{ form_widget(form.time) }}
+			{{ form_errors(form.time) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.foodType) }}
+			{{ form_widget(form.foodType) }}
+			{{ form_errors(form.foodType) }}
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 mb-3">
+			{{ form_label(form.quantity) }}
+			{{ form_widget(form.quantity) }}
+			{{ form_errors(form.quantity) }}
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-black mt-3" id="btn-food-conso">Soumettre</button>
+		</div>
+
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+		{{ form_end(form) }}
+	</section>
+
+	<!-- SECTION : FOOD CONSO LIST -->
+	{% include 'partials/_animalFoodDashboard.html.twig' %}
+{% endblock %}
