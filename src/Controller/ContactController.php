@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Document\Contact;
 use App\Form\ContactType;
 use Doctrine\ODM\MongoDB\DocumentManager;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

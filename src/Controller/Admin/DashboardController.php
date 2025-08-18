@@ -60,6 +60,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Gérer les horaires', 'fa-solid fa-clock', OpeningHours::class);
         yield MenuItem::linkToCrud('Gérer les services', 'fa-solid fa-bell-concierge', Service::class);
         yield MenuItem::linkToRoute('Rapports vétérinaires', 'fa-solid fa-stethoscope', 'app_veterinary_report_consult');
-        yield MenuItem::linkToCrud('Statistiques', 'fa-solid fa-chart-simple', Consultation::class);
+        yield MenuItem::linkToRoute('Statistiques', 'fa-solid fa-chart-simple', Consultation::class);
     }
 }
