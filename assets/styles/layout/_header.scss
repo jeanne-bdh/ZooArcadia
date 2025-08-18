@@ -1,0 +1,49 @@
+.name-zoo {
+    a {
+        font-family: $font-family-logo;
+        text-decoration: none;
+        font-size: 1.4rem;
+
+        &:hover {
+            color: $primary;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    svg {
+        width: 1.9rem;
+        height: 1.9rem;
+        fill: $light;
+    }
+}
+
+.logo {
+    width: 75px;
+
+    @media (min-width: 768px) {
+        width: 100%;
+    }
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+body {
+    padding-top: 65px;
+}
+
+.navbar {
+    z-index: 10;
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation de la consommation des animaux
+{% endblock %}
+
+{% block body %}
+
+    <!-- SECTION : HERO -->
+    {% include 'partials/_hero.html.twig' with { title: 'Consultation de la consommation des animaux' } %}
+
+	<!-- SECTION : FOOD CONSO LIST -->
+	{% include 'partials/_animalFoodDashboard.html.twig' %}
+    
+{% endblock %}

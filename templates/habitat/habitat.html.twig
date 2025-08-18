@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos habitats
+{% endblock %}
+
+{% block body %}
+	<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'NOS HABITATS' } %}
+
+	<!-- SECTION : HABITATS -->
+	<section class="container d-flex flex-column my-4 mx-auto">
+		{% for habitat in habitats %}
+			<article class="d-flex flex-column align-items-center mb-4">
+				<a class="text-black" href="{{ path('app_habitat_details', {'id': habitat.id}) }}">
+					<h3>{{ habitat.habitatName }}</h3>
+				</a>
+				<div class="text-center">
+					<a href="{{ path('app_habitat_details', {'id': habitat.id}) }}">
+						<img class="w-50 object-fit-cover rounded-circle" src="{{ vich_uploader_asset(habitat, 'imageFile') }}" alt="{{ habitat.habitatName }}">
+					</a>
+				</div>
+			</article>
+		{% endfor %}
+	</section>
+{% endblock %}

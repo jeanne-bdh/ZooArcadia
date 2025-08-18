@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consultation des comptes rendus vétérinaires
+{% endblock %}
+
+{% block body %}
+
+    <!-- SECTION : HERO -->
+    {% include 'partials/_hero.html.twig' with { title: 'Consultation des comptes rendus vétérinaires' } %}
+
+	<!-- SECTION : FOOD CONSO LIST -->
+	{% include 'partials/_veterinaryReportDashboard.html.twig' %}
+    
+{% endblock %}

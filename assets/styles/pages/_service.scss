@@ -1,0 +1,17 @@
+.img-services {
+    width: 150px;
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    .article-services {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .img-services {
+        width: 200px;
+        height: auto;
+    }
+}

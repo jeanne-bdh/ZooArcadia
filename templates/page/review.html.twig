@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rédigez un avis
+{% endblock %}
+
+{% block body %}
+	<!-- SECTION : HERO -->
+	{% include 'partials/_hero.html.twig' with { title: 'Rédigez un avis' } %}
+
+	<!-- SECTION : REVIEW FORM -->
+	<section class="container-back bg-primary mx-auto py-5">
+		<div class="bg-tertiary w-75 mx-auto rounded-3 p-4 p-md-5 border border-dark">
+			{{ form_start(form) }}
+			<div class="mb-3">
+				{{ form_label(form.pseudo) }}
+				{{ form_widget(form.pseudo) }}
+				{{ form_errors(form.pseudo) }}
+			</div>
+
+			<div class="pt-3 mb-3">
+				{{ form_label(form.rate) }}
+				{{ form_widget(form.rate) }}
+				{{ form_errors(form.rate) }}
+            </div>
+
+            <div class="mb-3 pb-3">
+                {{ form_label(form.review) }}
+				{{ form_widget(form.review) }}
+				{{ form_errors(form.review) }}
+            </div>
+
+            <div class="text-center">
+                    <button type="submit" class="btn btn-black" id="btn-review">Soumettre</button>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </section>
+{% endblock %}
