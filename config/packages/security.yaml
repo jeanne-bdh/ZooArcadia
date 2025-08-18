@@ -23,6 +23,7 @@ security:
                 login_path: app_login
                 check_path: app_login
                 enable_csrf: true
+                csrf_token_generator: ~
                 username_parameter: email
                 password_parameter: _password
                 success_handler: App\Security\LoginSuccessHandler
