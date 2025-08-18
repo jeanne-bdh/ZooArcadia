@@ -2,18 +2,18 @@
 
 namespace App\Controller;
 
-use App\Entity\Contact;
+use App\Document\Contact;
 use App\Form\ContactType;
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ODM\MongoDB\DocumentManager;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
 
-final class ContactController extends AbstractController
+class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, DocumentManager $documentManager): Response
     {
         $contact = new Contact();
         $contact->setDateContact(new \DateTime());
@@ -21,8 +21,8 @@ final class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($contact);
-            $entityManager->flush();
+            $documentManager->persist($contact);
+            $documentManager->flush();
             $this->addFlash('success', 'Votre message a bien été envoyé');
             return $this->redirectToRoute('app_contact');
         }

@@ -1,36 +1,32 @@
 <?php
 
-namespace App\Entity;
+namespace App\Document;
 
-use App\Repository\ContactRepository;
-use Doctrine\DBAL\Types\Types;
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ORM\Entity(repositoryClass: ContactRepository::class)]
+#[MongoDB\Document(collection: "contact")]
 class Contact
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[MongoDB\Id]
+    private ?string $id = null;
 
-    #[ORM\Column(length: 50)]
+    #[MongoDB\Field(type : 'string')]
     #[Assert\Length(min: 5, max: 50, minMessage: "Veuillez entrer un titre ayant au moins {{ limit }} caractères")]
     private ?string $title = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[MongoDB\Field(type: 'string')]
     #[Assert\Length(min: 20, minMessage: "Veuillez entrer un message ayant au moins {{ limit }} caractères")]
     private ?string $message = null;
 
-    #[ORM\Column(length: 255)]
+    #[MongoDB\Field(type : 'string')]
     #[Assert\Email(message: "Veuillez entrer une adresse e-mail valide")]
     private ?string $email = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTime $dateContact = null;
+    #[MongoDB\Field(type: 'date')]
+    private ?\DateTimeInterface $dateContact = null;
 
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -71,12 +67,12 @@ class Contact
         return $this;
     }
 
-    public function getDateContact(): ?\DateTime
+    public function getDateContact(): ?\DateTimeInterface
     {
         return $this->dateContact;
     }
 
-    public function setDateContact(\DateTime $dateContact): static
+    public function setDateContact(\DateTimeInterface $dateContact): static
     {
         $this->dateContact = $dateContact;
 
