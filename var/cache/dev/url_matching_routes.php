@@ -14,11 +14,6 @@ return [
         '/admin/animal/batch-delete' => [[['_route' => 'admin_animal_batch_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\AnimalCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
         '/admin/animal/autocomplete' => [[['_route' => 'admin_animal_autocomplete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\AnimalCrudController::autocomplete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController', 'crudAction' => 'autocomplete'], null, ['GET' => 0], null, false, false, null]],
         '/admin/animal/render-filters' => [[['_route' => 'admin_animal_render_filters', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\AnimalCrudController::renderFilters', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController', 'crudAction' => 'renderFilters'], null, ['GET' => 0], null, false, false, null]],
-        '/admin/consultation' => [[['_route' => 'admin_consultation_index', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::index', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'index'], null, ['GET' => 0], null, false, false, null]],
-        '/admin/consultation/new' => [[['_route' => 'admin_consultation_new', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::new', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/admin/consultation/batch-delete' => [[['_route' => 'admin_consultation_batch_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
-        '/admin/consultation/autocomplete' => [[['_route' => 'admin_consultation_autocomplete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::autocomplete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'autocomplete'], null, ['GET' => 0], null, false, false, null]],
-        '/admin/consultation/render-filters' => [[['_route' => 'admin_consultation_render_filters', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::renderFilters', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'renderFilters'], null, ['GET' => 0], null, false, false, null]],
         '/admin/habitat' => [[['_route' => 'admin_habitat_index', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::index', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'index'], null, ['GET' => 0], null, false, false, null]],
         '/admin/habitat/new' => [[['_route' => 'admin_habitat_new', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::new', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/habitat/batch-delete' => [[['_route' => 'admin_habitat_batch_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::batchDelete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'batchDelete'], null, ['POST' => 0], null, false, false, null]],
@@ -46,6 +41,8 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/consultation' => [[['_route' => 'app_consultation', '_controller' => 'App\\Controller\\Admin\\ConsultationController::index'], null, ['POST' => 0], null, false, false, null]],
+        '/stats' => [[['_route' => 'app_stats', '_controller' => 'App\\Controller\\Admin\\ConsultationController::stats'], null, ['GET' => 0], null, false, false, null]],
         '/veterinaryReportConsult' => [[['_route' => 'app_veterinary_report_consult', '_controller' => 'App\\Controller\\Admin\\VeterinaryReportConsultController::index'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
         '/animalFood' => [[['_route' => 'app_animal_food', '_controller' => 'App\\Controller\\Employee\\AnimalFoodController::index'], null, null, null, false, false, null]],
@@ -73,98 +70,88 @@ return [
                             .')'
                             .'|(*:67)'
                         .')'
-                        .'|consultation/([^/]++)(?'
-                            .'|/(?'
-                                .'|edit(*:107)'
-                                .'|delete(*:121)'
-                            .')'
-                            .'|(*:130)'
-                        .')'
                         .'|habitat/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:166)'
-                                .'|delete(*:180)'
+                                .'|edit(*:102)'
+                                .'|delete(*:116)'
                             .')'
-                            .'|(*:189)'
+                            .'|(*:125)'
                         .')'
                         .'|opening\\-hours/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:232)'
-                                .'|delete(*:246)'
+                                .'|edit(*:168)'
+                                .'|delete(*:182)'
                             .')'
-                            .'|(*:255)'
+                            .'|(*:191)'
                         .')'
                         .'|service/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:291)'
-                                .'|delete(*:305)'
+                                .'|edit(*:227)'
+                                .'|delete(*:241)'
                             .')'
-                            .'|(*:314)'
+                            .'|(*:250)'
                         .')'
                         .'|user/([^/]++)(?'
                             .'|/(?'
-                                .'|edit(*:347)'
-                                .'|delete(*:361)'
+                                .'|edit(*:283)'
+                                .'|delete(*:297)'
                             .')'
-                            .'|(*:370)'
+                            .'|(*:306)'
                         .')'
                     .')'
                     .'|nimal(?'
-                        .'|/([^/]++)(*:397)'
-                        .'|sByBreed/([^/]++)(*:422)'
+                        .'|/([^/]++)(*:333)'
+                        .'|sByBreed/([^/]++)(*:358)'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:463)'
-                    .'|wdt/([^/]++)(*:483)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:399)'
+                    .'|wdt/([^/]++)(*:419)'
                     .'|profiler/(?'
-                        .'|font/([^/\\.]++)\\.woff2(*:525)'
+                        .'|font/([^/\\.]++)\\.woff2(*:461)'
                         .'|([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:562)'
-                                .'|router(*:576)'
+                                .'|search/results(*:498)'
+                                .'|router(*:512)'
                                 .'|exception(?'
-                                    .'|(*:596)'
-                                    .'|\\.css(*:609)'
+                                    .'|(*:532)'
+                                    .'|\\.css(*:545)'
                                 .')'
                             .')'
-                            .'|(*:619)'
+                            .'|(*:555)'
                         .')'
                     .')'
                 .')'
-                .'|/habitatDetails/([^/]++)(*:654)'
+                .'|/habitatDetails/([^/]++)(*:590)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
         46 => [[['_route' => 'admin_animal_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\AnimalCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
         59 => [[['_route' => 'admin_animal_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\AnimalCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
         67 => [[['_route' => 'admin_animal_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\AnimalCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        107 => [[['_route' => 'admin_consultation_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        121 => [[['_route' => 'admin_consultation_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        130 => [[['_route' => 'admin_consultation_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ConsultationCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        166 => [[['_route' => 'admin_habitat_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        180 => [[['_route' => 'admin_habitat_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        189 => [[['_route' => 'admin_habitat_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        232 => [[['_route' => 'admin_opening_hours_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\OpeningHoursCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\OpeningHoursCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        246 => [[['_route' => 'admin_opening_hours_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\OpeningHoursCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\OpeningHoursCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        255 => [[['_route' => 'admin_opening_hours_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\OpeningHoursCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\OpeningHoursCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        291 => [[['_route' => 'admin_service_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ServiceCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ServiceCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        305 => [[['_route' => 'admin_service_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ServiceCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ServiceCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        314 => [[['_route' => 'admin_service_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ServiceCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ServiceCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        347 => [[['_route' => 'admin_user_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
-        361 => [[['_route' => 'admin_user_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
-        370 => [[['_route' => 'admin_user_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
-        397 => [[['_route' => 'app_animal', '_controller' => 'App\\Controller\\AnimalController::index'], ['id'], null, null, false, true, null]],
-        422 => [[['_route' => 'animals_by_breed', '_controller' => 'App\\Controller\\Employee\\AnimalFoodController::animalsByBreed'], ['id'], null, null, false, true, null]],
-        463 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        483 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        525 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
-        562 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        576 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        596 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        609 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        619 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        654 => [
+        102 => [[['_route' => 'admin_habitat_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        116 => [[['_route' => 'admin_habitat_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        125 => [[['_route' => 'admin_habitat_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\HabitatCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        168 => [[['_route' => 'admin_opening_hours_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\OpeningHoursCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\OpeningHoursCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        182 => [[['_route' => 'admin_opening_hours_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\OpeningHoursCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\OpeningHoursCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        191 => [[['_route' => 'admin_opening_hours_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\OpeningHoursCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\OpeningHoursCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        227 => [[['_route' => 'admin_service_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ServiceCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ServiceCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        241 => [[['_route' => 'admin_service_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ServiceCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ServiceCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        250 => [[['_route' => 'admin_service_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\ServiceCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\ServiceCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        283 => [[['_route' => 'admin_user_edit', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\UserCrudController::edit', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'edit'], ['entityId'], ['GET' => 0, 'POST' => 1, 'PATCH' => 2], null, false, false, null]],
+        297 => [[['_route' => 'admin_user_delete', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\UserCrudController::delete', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'delete'], ['entityId'], ['POST' => 0], null, false, false, null]],
+        306 => [[['_route' => 'admin_user_detail', '_locale' => 'fr', '_controller' => 'App\\Controller\\Admin\\UserCrudController::detail', 'routeCreatedByEasyAdmin' => true, 'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController', 'crudControllerFqcn' => 'App\\Controller\\Admin\\UserCrudController', 'crudAction' => 'detail'], ['entityId'], ['GET' => 0], null, false, true, null]],
+        333 => [[['_route' => 'app_animal', '_controller' => 'App\\Controller\\AnimalController::index'], ['id'], null, null, false, true, null]],
+        358 => [[['_route' => 'animals_by_breed', '_controller' => 'App\\Controller\\Employee\\AnimalFoodController::animalsByBreed'], ['id'], null, null, false, true, null]],
+        399 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        419 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        461 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
+        498 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        512 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        532 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        545 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        555 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        590 => [
             [['_route' => 'app_habitat_details', '_controller' => 'App\\Controller\\HabitatController::detail'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
