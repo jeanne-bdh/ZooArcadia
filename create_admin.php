@@ -26,6 +26,8 @@ $passwordHasher = $container->get('security.user_password_hasher');
 // Création de l'utilisateur admin
 $user = new User();
 $user->setEmail('admin@zooarcadia.com');
+$user->setFirstname('José');
+$user->setLastname('Fougerre');
 $user->setRoles(['ROLE_ADMIN']);
 $user->setPassword($passwordHasher->hashPassword($user, 'PJ1mRslZA?s\'itp')); // change le mot de passe
 
