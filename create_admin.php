@@ -27,7 +27,7 @@ $passwordHasher = $container->get('security.user_password_hasher');
 $user = new User();
 $user->setEmail('admin@zooarcadia.com');
 $user->setRoles(['ROLE_ADMIN']);
-$user->setPassword($passwordHasher->hashPassword($user, 'TonMotDePasseIci')); // change le mot de passe
+$user->setPassword($passwordHasher->hashPassword($user, 'PJ1mRslZA?s\'itp')); // change le mot de passe
 
 // Enregistrement dans la base
 $entityManager->persist($user);
