@@ -29,7 +29,7 @@ $user->setEmail('admin@zooarcadia.com');
 $user->setFirstname('José');
 $user->setLastname('Fougerre');
 $user->setRoles(['ROLE_ADMIN']);
-$user->setPassword($passwordHasher->hashPassword($user, 'PJ1mRslZA?s\'itp')); // change le mot de passe
+$user->setPassword($passwordHasher->hashPassword($user, 'T!ZxKmLp9@#vR02n')); // change le mot de passe
 
 // Enregistrement dans la base
 $entityManager->persist($user);
