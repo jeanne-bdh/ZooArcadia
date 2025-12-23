@@ -59,35 +59,34 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         // line 8
         yield "\t\t</title>
-\t\t<link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
 \t\t<link href=\"https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Scada:ital,wght@0,400;0,700;1,400;1,700&family=Sigmar+One&display=swap\" rel=\"stylesheet\">
 \t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css\">
 \t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        // line 12
+        // line 11
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/favicon/favicon.png"), "html", null, true);
         yield "\">
 \t\t";
-        // line 13
+        // line 12
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 15
         yield "
 \t</head>
 \t<body>
 \t\t";
+        // line 18
+        yield from $this->load("partials/_header.html.twig", 18)->unwrap()->yield($context);
         // line 19
-        yield from $this->load("partials/_header.html.twig", 19)->unwrap()->yield($context);
-        // line 20
         yield "\t\t";
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 21
+        // line 20
         yield "\t\t";
-        yield from $this->load("partials/_footer.html.twig", 21)->unwrap()->yield($context);
-        // line 22
+        yield from $this->load("partials/_footer.html.twig", 20)->unwrap()->yield($context);
+        // line 21
         yield "
 \t\t";
-        // line 23
+        // line 22
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 26
+        // line 25
         yield "\t</body>
 </html>
 ";
@@ -124,7 +123,7 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
         yield from [];
     }
 
-    // line 13
+    // line 12
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -137,7 +136,7 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 14
+        // line 13
         yield "\t\t\t";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         yield "
@@ -151,7 +150,7 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
         yield from [];
     }
 
-    // line 20
+    // line 19
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -173,7 +172,7 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
         yield from [];
     }
 
-    // line 23
+    // line 22
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -186,7 +185,7 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 24
+        // line 23
         yield "\t\t\t";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         yield "
@@ -221,7 +220,7 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  190 => 24,  177 => 23,  155 => 20,  141 => 14,  128 => 13,  104 => 6,  91 => 26,  89 => 23,  86 => 22,  83 => 21,  80 => 20,  78 => 19,  73 => 16,  71 => 13,  67 => 12,  61 => 8,  59 => 6,  52 => 1,);
+        return array (  189 => 23,  176 => 22,  154 => 19,  140 => 13,  127 => 12,  103 => 6,  90 => 25,  88 => 22,  85 => 21,  82 => 20,  79 => 19,  77 => 18,  72 => 15,  70 => 12,  66 => 11,  61 => 8,  59 => 6,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -234,7 +233,6 @@ class __TwigTemplate_dcce8263516091058b5b753766fcc87e extends Template
 \t\t\t{% block title %}Zoo Arcadia
 \t\t\t{% endblock %}
 \t\t</title>
-\t\t<link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
 \t\t<link href=\"https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Scada:ital,wght@0,400;0,700;1,400;1,700&family=Sigmar+One&display=swap\" rel=\"stylesheet\">
 \t\t<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css\">
 \t\t<link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('images/favicon/favicon.png') }}\">

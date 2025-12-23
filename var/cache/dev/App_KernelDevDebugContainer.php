@@ -16,7 +16,12 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerKbwMdRx\App_KernelDevDebugContainer([
     'container.build_hash' => 'KbwMdRx',
+<<<<<<< HEAD
     'container.build_id' => '4bfa8a17',
     'container.build_time' => 1755523334,
+=======
+    'container.build_id' => 'b89689e6',
+    'container.build_time' => 1766506453,
+>>>>>>> develop
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerKbwMdRx');
