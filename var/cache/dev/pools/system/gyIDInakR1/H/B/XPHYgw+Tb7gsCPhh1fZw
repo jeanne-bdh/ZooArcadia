@@ -46,46 +46,6 @@ return [PHP_INT_MAX, [
         'crudControllerFqcn' => 'App\\Controller\\Admin\\AnimalCrudController',
         'crudAction' => 'detail',
     ],
-    'admin_consultation_index' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'index',
-    ],
-    'admin_consultation_new' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'new',
-    ],
-    'admin_consultation_batch_delete' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'batchDelete',
-    ],
-    'admin_consultation_autocomplete' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'autocomplete',
-    ],
-    'admin_consultation_render_filters' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'renderFilters',
-    ],
-    'admin_consultation_edit' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'edit',
-    ],
-    'admin_consultation_delete' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'delete',
-    ],
-    'admin_consultation_detail' => [
-        'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
-        'crudControllerFqcn' => 'App\\Controller\\Admin\\ConsultationCrudController',
-        'crudAction' => 'detail',
-    ],
     'admin_habitat_index' => [
         'dashboardControllerFqcn' => 'App\\Controller\\Admin\\DashboardController',
         'crudControllerFqcn' => 'App\\Controller\\Admin\\HabitatCrudController',

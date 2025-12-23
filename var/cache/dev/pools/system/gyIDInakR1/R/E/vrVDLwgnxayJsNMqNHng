@@ -15,16 +15,6 @@ return [PHP_INT_MAX, [
             'delete' => 'admin_animal_delete',
             'detail' => 'admin_animal_detail',
         ],
-        'App\\Controller\\Admin\\ConsultationCrudController' => [
-            'index' => 'admin_consultation_index',
-            'new' => 'admin_consultation_new',
-            'batchDelete' => 'admin_consultation_batch_delete',
-            'autocomplete' => 'admin_consultation_autocomplete',
-            'renderFilters' => 'admin_consultation_render_filters',
-            'edit' => 'admin_consultation_edit',
-            'delete' => 'admin_consultation_delete',
-            'detail' => 'admin_consultation_detail',
-        ],
         'App\\Controller\\Admin\\HabitatCrudController' => [
             'index' => 'admin_habitat_index',
             'new' => 'admin_habitat_new',

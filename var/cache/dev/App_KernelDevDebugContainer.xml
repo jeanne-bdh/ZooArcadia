@@ -489,12 +489,11 @@
         <argument type="service" id=".service_locator.5PWTx9U.App\Controller\Admin\AnimalCrudController"/>
       </call>
     </service>
-    <service id="App\Controller\Admin\ConsultationCrudController" class="App\Controller\Admin\ConsultationCrudController" public="true" autowire="true" autoconfigure="true">
-      <tag name="ea.crud_controller"/>
+    <service id="App\Controller\Admin\ConsultationController" class="App\Controller\Admin\ConsultationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.5PWTx9U.App\Controller\Admin\ConsultationCrudController"/>
+        <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\Admin\ConsultationController"/>
       </call>
     </service>
     <service id="App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" public="true" autowire="true" autoconfigure="true">
@@ -792,7 +791,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.BDho3Hv"/>
+      <argument type="service" id=".service_locator.YztvPcV"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3796,7 +3795,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.BDho3Hv"/>
+      <argument type="service" id=".service_locator.YztvPcV"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -9238,10 +9237,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AnimalCrudController" class="App\Controller\Admin\AnimalCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\AnimalCrudController" class="App\Controller\Admin\AnimalCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\AnimalCrudController" class="App\Controller\Admin\AnimalCrudController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ConsultationCrudController" class="App\Controller\Admin\ConsultationCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ConsultationCrudController" class="App\Controller\Admin\ConsultationCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ConsultationCrudController" class="App\Controller\Admin\ConsultationCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Admin\ConsultationCrudController" class="App\Controller\Admin\ConsultationCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ConsultationController" class="App\Controller\Admin\ConsultationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ConsultationController" class="App\Controller\Admin\ConsultationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\Admin\ConsultationController.0.App\Controller\Admin\ConsultationController" class="App\Controller\Admin\ConsultationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\ConsultationController" class="App\Controller\Admin\ConsultationController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
@@ -9272,6 +9271,7 @@
     <service id=".abstract.instanceof.App\Controller\AnimalController" class="App\Controller\AnimalController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\ContactController.0.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContactController" class="App\Controller\ContactController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Employee\AnimalFoodController" class="App\Controller\Employee\AnimalFoodController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Employee\AnimalFoodController" class="App\Controller\Employee\AnimalFoodController" autowire="true" abstract="true"/>
@@ -10175,131 +10175,24 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ib1WIGE" method="withContext"/>
     </service>
-    <service id=".service_locator.OoSfY9L.App\Controller\Admin\ConsultationCrudController::configureCrud()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::configureCrud()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::configureCrud()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.OoSfY9L" method="withContext"/>
+    <service id=".service_locator.nm_.mR6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="consultation" type="service_closure" id="App\Entity\Consultation"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
     </service>
-    <service id=".service_locator.PE.ZUUL.App\Controller\Admin\ConsultationCrudController::configureAssets()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::configureAssets()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::configureAssets()</argument>
+    <service id=".service_locator.nm_.mR6.App\Controller\Admin\ConsultationController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationController::index()"/>
+      <argument>App\Controller\Admin\ConsultationController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.PE.ZUUL" method="withContext"/>
+      <factory service=".service_locator.nm_.mR6" method="withContext"/>
     </service>
-    <service id=".service_locator.T.Ra9lS.App\Controller\Admin\ConsultationCrudController::configureActions()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::configureActions()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::configureActions()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.T.Ra9lS" method="withContext"/>
-    </service>
-    <service id=".service_locator.CFbfVRp.App\Controller\Admin\ConsultationCrudController::configureFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::configureFilters()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::configureFilters()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CFbfVRp" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::index()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::index()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::detail()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::detail()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::detail()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::edit()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::edit()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::new()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::new()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::delete()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::delete()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.oDo8ofG.App\Controller\Admin\ConsultationCrudController::batchDelete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::batchDelete()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::batchDelete()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.oDo8ofG" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::autocomplete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::autocomplete()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::autocomplete()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.kqcX6wc.App\Controller\Admin\ConsultationCrudController::createIndexQueryBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::createIndexQueryBuilder()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::createIndexQueryBuilder()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.kqcX6wc" method="withContext"/>
-    </service>
-    <service id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::renderFilters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::renderFilters()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::renderFilters()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.IaSFwjD" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::updateEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::updateEntity()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::updateEntity()</argument>
+    <service id=".service_locator.egipcEH.App\Controller\Admin\ConsultationController::stats()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationController::stats()"/>
+      <argument>App\Controller\Admin\ConsultationController::stats()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::persistEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::persistEntity()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::persistEntity()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
-    <service id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::deleteEntity()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::deleteEntity()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::deleteEntity()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.egipcEH" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createEditForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::createEditForm()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::createEditForm()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createEditFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::createEditFormBuilder()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::createEditFormBuilder()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createNewForm()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::createNewForm()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::createNewForm()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createNewFormBuilder()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::createNewFormBuilder()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::createNewFormBuilder()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.CaejQBj" method="withContext"/>
-    </service>
-    <service id=".service_locator.ib1WIGE.App\Controller\Admin\ConsultationCrudController::configureResponseParameters()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController::configureResponseParameters()"/>
-      <argument>App\Controller\Admin\ConsultationCrudController::configureResponseParameters()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ib1WIGE" method="withContext"/>
     </service>
     <service id=".service_locator.5FanY8e" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -10957,7 +10850,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.egipcEH" method="withContext"/>
     </service>
-    <service id=".service_locator.BDho3Hv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YztvPcV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.zHyJIs5.kernel::registerContainerConfiguration()"/>
@@ -10985,27 +10878,8 @@
         <argument key="App\Controller\Admin\AnimalCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\AnimalCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\AnimalCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\AnimalCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\AnimalCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\AnimalCrudController::configureResponseParameters()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\ConsultationCrudController::configureCrud()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\ConsultationCrudController::configureAssets()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\ConsultationCrudController::configureActions()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\ConsultationCrudController::configureFilters()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::index()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::detail()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::edit()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::new()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::delete()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\ConsultationCrudController::batchDelete()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::autocomplete()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\ConsultationCrudController::createIndexQueryBuilder()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::renderFilters()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::updateEntity()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::persistEntity()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::deleteEntity()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createEditForm()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createEditFormBuilder()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createNewForm()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createNewFormBuilder()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController::configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\ConsultationCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\Admin\ConsultationController::index" type="service_closure" id=".service_locator.nm_.mR6.App\Controller\Admin\ConsultationController::index()"/>
+        <argument key="App\Controller\Admin\ConsultationController::stats" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationController::stats()"/>
         <argument key="App\Controller\Admin\DashboardController::configureUserMenu" type="service_closure" id=".service_locator.5FanY8e.App\Controller\Admin\DashboardController::configureUserMenu()"/>
         <argument key="App\Controller\Admin\HabitatCrudController::configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\HabitatCrudController::configureCrud()"/>
         <argument key="App\Controller\Admin\HabitatCrudController::configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\HabitatCrudController::configureAssets()"/>
@@ -11128,27 +11002,8 @@
         <argument key="App\Controller\Admin\AnimalCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\AnimalCrudController::createNewForm()"/>
         <argument key="App\Controller\Admin\AnimalCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\AnimalCrudController::createNewFormBuilder()"/>
         <argument key="App\Controller\Admin\AnimalCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\AnimalCrudController::configureResponseParameters()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\ConsultationCrudController::configureCrud()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\ConsultationCrudController::configureAssets()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:configureActions" type="service_closure" id=".service_locator.T.Ra9lS.App\Controller\Admin\ConsultationCrudController::configureActions()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:configureFilters" type="service_closure" id=".service_locator.CFbfVRp.App\Controller\Admin\ConsultationCrudController::configureFilters()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:index" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::index()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:detail" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::detail()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:edit" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::edit()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:new" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::new()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:delete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::delete()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:batchDelete" type="service_closure" id=".service_locator.oDo8ofG.App\Controller\Admin\ConsultationCrudController::batchDelete()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:autocomplete" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::autocomplete()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.kqcX6wc.App\Controller\Admin\ConsultationCrudController::createIndexQueryBuilder()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:renderFilters" type="service_closure" id=".service_locator.IaSFwjD.App\Controller\Admin\ConsultationCrudController::renderFilters()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:updateEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::updateEntity()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:persistEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::persistEntity()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:deleteEntity" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationCrudController::deleteEntity()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:createEditForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createEditForm()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createEditFormBuilder()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:createNewForm" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createNewForm()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.CaejQBj.App\Controller\Admin\ConsultationCrudController::createNewFormBuilder()"/>
-        <argument key="App\Controller\Admin\ConsultationCrudController:configureResponseParameters" type="service_closure" id=".service_locator.ib1WIGE.App\Controller\Admin\ConsultationCrudController::configureResponseParameters()"/>
+        <argument key="App\Controller\Admin\ConsultationController:index" type="service_closure" id=".service_locator.nm_.mR6.App\Controller\Admin\ConsultationController::index()"/>
+        <argument key="App\Controller\Admin\ConsultationController:stats" type="service_closure" id=".service_locator.egipcEH.App\Controller\Admin\ConsultationController::stats()"/>
         <argument key="App\Controller\Admin\DashboardController:configureUserMenu" type="service_closure" id=".service_locator.5FanY8e.App\Controller\Admin\DashboardController::configureUserMenu()"/>
         <argument key="App\Controller\Admin\HabitatCrudController:configureCrud" type="service_closure" id=".service_locator.OoSfY9L.App\Controller\Admin\HabitatCrudController::configureCrud()"/>
         <argument key="App\Controller\Admin\HabitatCrudController:configureAssets" type="service_closure" id=".service_locator.PE.ZUUL.App\Controller\Admin\HabitatCrudController::configureAssets()"/>
@@ -11860,7 +11715,6 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry">
       <argument type="collection">
         <argument key="App\Controller\Admin\AnimalCrudController">App\Entity\Animal</argument>
-        <argument key="App\Controller\Admin\ConsultationCrudController">App\Entity\Consultation</argument>
         <argument key="App\Controller\Admin\HabitatCrudController">App\Entity\Habitat</argument>
         <argument key="App\Controller\Admin\OpeningHoursCrudController">App\Entity\OpeningHours</argument>
         <argument key="App\Controller\Admin\ServiceCrudController">App\Entity\Service</argument>
@@ -11868,7 +11722,6 @@
       </argument>
       <argument type="collection">
         <argument key="App\Controller\Admin\AnimalCrudController">8e184e1</argument>
-        <argument key="App\Controller\Admin\ConsultationCrudController">4da7111</argument>
         <argument key="App\Controller\Admin\HabitatCrudController">2443b7e</argument>
         <argument key="App\Controller\Admin\OpeningHoursCrudController">c35adae</argument>
         <argument key="App\Controller\Admin\ServiceCrudController">65e198a</argument>
@@ -11876,7 +11729,6 @@
       </argument>
       <argument type="collection">
         <argument key="App\Entity\Animal">App\Controller\Admin\AnimalCrudController</argument>
-        <argument key="App\Entity\Consultation">App\Controller\Admin\ConsultationCrudController</argument>
         <argument key="App\Entity\Habitat">App\Controller\Admin\HabitatCrudController</argument>
         <argument key="App\Entity\OpeningHours">App\Controller\Admin\OpeningHoursCrudController</argument>
         <argument key="App\Entity\Service">App\Controller\Admin\ServiceCrudController</argument>
@@ -11884,7 +11736,6 @@
       </argument>
       <argument type="collection">
         <argument key="8e184e1">App\Controller\Admin\AnimalCrudController</argument>
-        <argument key="4da7111">App\Controller\Admin\ConsultationCrudController</argument>
         <argument key="2443b7e">App\Controller\Admin\HabitatCrudController</argument>
         <argument key="c35adae">App\Controller\Admin\OpeningHoursCrudController</argument>
         <argument key="65e198a">App\Controller\Admin\ServiceCrudController</argument>
@@ -11946,11 +11797,27 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5PWTx9U" method="withContext"/>
     </service>
-    <service id=".service_locator.5PWTx9U.App\Controller\Admin\ConsultationCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationCrudController"/>
-      <argument>App\Controller\Admin\ConsultationCrudController</argument>
+    <service id=".service_locator.ZyP9f7K" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="router" type="service_closure" id="router.default" on-invalid="ignore"/>
+        <argument key="request_stack" type="service_closure" id="request_stack" on-invalid="ignore"/>
+        <argument key="http_kernel" type="service_closure" id="http_kernel" on-invalid="ignore"/>
+        <argument key="serializer" type="service_closure" id="debug.serializer" on-invalid="ignore"/>
+        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker" on-invalid="ignore"/>
+        <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
+        <argument key="form.factory" type="service_closure" id="form.factory" on-invalid="ignore"/>
+        <argument key="security.token_storage" type="service_closure" id="security.token_storage" on-invalid="ignore"/>
+        <argument key="security.csrf.token_manager" type="service_closure" id="security.csrf.same_origin_token_manager" on-invalid="ignore"/>
+        <argument key="parameter_bag" type="service_closure" id="parameter_bag" on-invalid="ignore"/>
+        <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZyP9f7K.App\Controller\Admin\ConsultationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\ConsultationController"/>
+      <argument>App\Controller\Admin\ConsultationController</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.5PWTx9U" method="withContext"/>
+      <factory service=".service_locator.ZyP9f7K" method="withContext"/>
     </service>
     <service id=".service_locator.zHhPQcF" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -11998,22 +11865,6 @@
       <argument>App\Controller\Admin\UserCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5PWTx9U" method="withContext"/>
-    </service>
-    <service id=".service_locator.ZyP9f7K" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="router" type="service_closure" id="router.default" on-invalid="ignore"/>
-        <argument key="request_stack" type="service_closure" id="request_stack" on-invalid="ignore"/>
-        <argument key="http_kernel" type="service_closure" id="http_kernel" on-invalid="ignore"/>
-        <argument key="serializer" type="service_closure" id="debug.serializer" on-invalid="ignore"/>
-        <argument key="security.authorization_checker" type="service_closure" id="security.authorization_checker" on-invalid="ignore"/>
-        <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
-        <argument key="form.factory" type="service_closure" id="form.factory" on-invalid="ignore"/>
-        <argument key="security.token_storage" type="service_closure" id="security.token_storage" on-invalid="ignore"/>
-        <argument key="security.csrf.token_manager" type="service_closure" id="security.csrf.same_origin_token_manager" on-invalid="ignore"/>
-        <argument key="parameter_bag" type="service_closure" id="parameter_bag" on-invalid="ignore"/>
-        <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
-      </argument>
     </service>
     <service id=".service_locator.ZyP9f7K.App\Controller\Admin\VeterinaryReportConsultController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\VeterinaryReportConsultController"/>
@@ -12300,7 +12151,7 @@
         <argument type="collection">
           <argument>App\Kernel</argument>
           <argument>App\Controller\Admin\AnimalCrudController</argument>
-          <argument>App\Controller\Admin\ConsultationCrudController</argument>
+          <argument>App\Controller\Admin\ConsultationController</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
           <argument>App\Controller\Admin\HabitatCrudController</argument>
           <argument>App\Controller\Admin\OpeningHoursCrudController</argument>
@@ -13839,7 +13690,7 @@
     <service id="doctrine_mongodb.odm.event_manager" alias="doctrine_mongodb.odm.default_connection.event_manager"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.BDho3Hv"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YztvPcV"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -13892,6 +13743,7 @@
     <service id=".service_locator.5Vd5JYV" alias=".service_locator.egipcEH"/>
     <service id=".service_locator.Onun9z5" alias=".service_locator.CaejQBj"/>
     <service id=".service_locator.TLLELrk" alias=".service_locator.ib1WIGE"/>
+    <service id=".service_locator.tmS9OFu" alias=".service_locator.nm_.mR6"/>
     <service id=".service_locator.iYcWkcr" alias=".service_locator.5FanY8e"/>
     <service id=".service_locator.rMH37Hd" alias=".service_locator.unDaxzS"/>
     <service id=".service_locator..f0Nk0M" alias=".service_locator.re0ldWF"/>
@@ -13903,7 +13755,7 @@
     <service id=".service_locator.te1JX0P" alias=".service_locator..wKp6bH"/>
     <service id=".service_locator.67SRAOI" alias=".service_locator.jiBAzly"/>
     <service id=".service_locator.kwdTDcG" alias=".service_locator.5PWTx9U"/>
-    <service id=".service_locator.JajWvNv" alias=".service_locator.zHhPQcF"/>
     <service id=".service_locator.9nvaCmp" alias=".service_locator.ZyP9f7K"/>
+    <service id=".service_locator.JajWvNv" alias=".service_locator.zHhPQcF"/>
   </services>
 </container>
